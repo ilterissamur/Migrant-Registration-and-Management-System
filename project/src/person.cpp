@@ -1,6 +1,6 @@
 #include "person.h"
 
-void person::createPerson() // kullanıcıdan yeni person alan fonksiyon
+void person::createPerson() // takes new person from user
 {
     cout << "Enter name: ";
     cin >> name;
@@ -18,23 +18,21 @@ void person::createPerson() // kullanıcıdan yeni person alan fonksiyon
     createID();
 }
 
-void person::createID() // person idsini oluşturan fonksiyon
+void person::createID() // create person id randomly
 {
-    int tempNum1, tempNum2;
+    int tempNum;
     string tempID;
 
-    srand(time(0));
-
-    tempNum1 = rand() % 9999 + 1000;
-    tempNum2 = rand() % 9999 + 1000;
-
-    tempID = to_string(tempNum1);
-    tempID = tempID + to_string(tempNum2);
+    for (size_t i = 0; i < 8; i++)
+    {
+        tempNum = rand() % 9 + 1;
+        tempID = tempID + to_string(tempNum);
+    }
 
     id = tempID;
 }
 
-void person::addFile() // dataya person ekleyen fonksiyon
+void person::addFile() // adds new person to data.txt
 {
     ofstream myFile;
     myFile.open("data.txt", ios::app);
@@ -45,7 +43,7 @@ void person::addFile() // dataya person ekleyen fonksiyon
     myFile.close();
 }
 
-void person::setData(string name, string surname, int age, string nationallity, string gender, string education) // datadan person bilgilerini alan fonksiyon
+void person::setData(string name, string surname, int age, string nationallity, string gender, string education) // fills person attributes
 {
     this->name = name;
     this->surname = surname;

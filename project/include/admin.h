@@ -8,12 +8,12 @@ using namespace std;
 
 class admin
 {
-    private:
-        string username, password;
+private:
+    string username, password;
 
-    public:
-        admin();
-        bool login();
+public:
+    admin();
+    bool login();
 };
 
 #endif

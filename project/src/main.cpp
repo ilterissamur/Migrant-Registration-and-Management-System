@@ -1,19 +1,18 @@
-#include <iostream>
 #include "person.h"
 #include "migrants.h"
 #include "admin.h"
-#include "displayMenu.h"
-#include "dataSize.h"
+#include "functions.h"
 
 using namespace std;
 
 int main()
 {
+    srand(time(NULL));
+
     int size = dataSize();
     int choice;
-    double budget;
 
-    person m1;
+    person person;
     migrants arr(size);
 
     /*admin a;
@@ -27,6 +26,11 @@ int main()
 
     arr.createArrayID();
 
+    for (size_t i = 0; i < 6; i++)
+    {
+        cout << arr.personArray[i].getID() << endl;
+    }
+
     choice = displayMenu();
 
     while (choice != 4)
@@ -34,10 +38,9 @@ int main()
         if (choice == 1)
         {
             arr.readArrayData();
-            m1.createPerson();
-            arr.addPerson(m1);
-            m1.addFile();
-            // cout << "111";
+            person.createPerson();
+            arr.addPerson(person);
+            person.addFile();
         }
         else if (choice == 2)
         {
@@ -52,8 +55,3 @@ int main()
         choice = displayMenu();
     }
 }
-
-// child classlar hariç yapıalcaklar
-// menu yönlendirilmesi (child classlar hariç)
-// migrantların idsini oluşturma ve dataya ekleme
-// olan özelliklerle display function

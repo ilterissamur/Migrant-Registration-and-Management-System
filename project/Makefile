@@ -1,18 +1,22 @@
 compilerun:program run
 
-program:displayMenu dataSize main admin person migrants
-	g++ ./lib/displayMenu.o ./lib/dataSize.o ./lib/main.o ./lib/admin.o ./lib/person.o ./lib/migrants.o -o ./bin/program
-dataSize:
-	g++ -I "./include" -c ./src/dataSize.cpp -o ./lib/dataSize.o
-displayMenu:
-	g++ -I "./include" -c ./src/displayMenu.cpp -o ./lib/displayMenu.o
+program:functions main admin person migrants
+	g++ ./obj/functions.o ./obj/main.o ./obj/admin.o ./obj/person.o ./obj/migrants.o ./obj/camp.o ./obj/employee.o ./obj/refugee.o -o ./bin/program
+functions:
+	g++ -I "./include" -c ./src/functions.cpp -o ./obj/functions.o
 main:
-	g++ -I "./include" -c ./src/main.cpp -o ./lib/main.o
+	g++ -I "./include" -c ./src/main.cpp -o ./obj/main.o
 admin:
-	g++ -I "./include" -c ./src/admin.cpp -o ./lib/admin.o
+	g++ -I "./include" -c ./src/admin.cpp -o ./obj/admin.o
 person:
-	g++ -I "./include" -c ./src/person.cpp -o ./lib/person.o
+	g++ -I "./include" -c ./src/person.cpp -o ./obj/person.o
 migrants:
-	g++ -I "./include" -c ./src/migrants.cpp -o ./lib/migrants.o
+	g++ -I "./include" -c ./src/migrants.cpp -o ./obj/migrants.o
+camp:
+	g++ -I "./include" -c ./src/camp.cpp -o ./obj/camp.o
+employee:
+	g++ -I "./include" -c ./src/employee.cpp -o ./obj/employee.o
+refugee:
+	g++ -I "./include" -c ./src/refugee.cpp -o ./obj/refugee.o
 run:
 	./bin/program.exe

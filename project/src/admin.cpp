@@ -6,9 +6,8 @@ admin::admin() // default constructor of admin class
     password = "admin123";
 }
 
-bool admin::login() // function that allows the user login
+bool admin::login() // function that provides the user login
 {
-    bool control;
     string tempUserName, tempPassword;
 
     cout << "Username: ";
