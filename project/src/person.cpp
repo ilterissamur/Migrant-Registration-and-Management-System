@@ -34,16 +34,22 @@ void person::createID() // create person id randomly
 
 void person::addFile() // adds new person to data.txt
 {
-    ofstream myFile;
-    myFile.open("data.txt", ios::app);
+    ofstream myFile1;
+    ofstream myFile2;
+    myFile1.open("data.txt", ios::app);
+    myFile2.open("id.txt", ios::app);
 
-    myFile << "\n"
-           << name << " " << surname << " " << age << " " << nationallity << " " << gender << " " << education;
+    myFile1 << "\n"
+            << name << " " << surname << " " << age << " " << nationallity << " " << gender << " " << education;
 
-    myFile.close();
+    myFile2 << "\n"
+            << id;
+
+    myFile1.close();
+    myFile2.close();
 }
 
-void person::setData(string name, string surname, int age, string nationallity, string gender, string education) // fills person attributes
+void person::setData(string name, string surname, int age, string nationallity, string gender, string education, string id) // fills person attributes
 {
     this->name = name;
     this->surname = surname;
@@ -51,6 +57,7 @@ void person::setData(string name, string surname, int age, string nationallity, 
     this->nationallity = nationallity;
     this->gender = gender;
     this->education = education;
+    this->id = id;
 }
 
 string person::getName()

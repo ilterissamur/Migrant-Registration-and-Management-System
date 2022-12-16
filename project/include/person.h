@@ -19,7 +19,7 @@ public:
     void createPerson();
     void createID();
     void addFile();
-    void setData(string name, string surname, int age, string nationallity, string gender, string education);
+    void setData(string name, string surname, int age, string nationallity, string gender, string education, string id);
     string getName();
     string getSurname();
     int getAge();

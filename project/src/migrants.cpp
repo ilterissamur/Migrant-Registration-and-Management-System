@@ -34,16 +34,19 @@ void migrants::addPerson(person &newPerson) // function that adds person to dyna
 
 void migrants::readArrayData() // fills person array with respect to data.txt
 {
-    ifstream myFile;
-    myFile.open("data.txt", ios::app);
+    ifstream myFile1;
+    ifstream myFile2;
+    myFile1.open("data.txt", ios::app);
+    myFile2.open("id.txt", ios::app);
 
-    string tempName, tempSurname, tempNationallity, tempGender, tempEducation;
+    string tempName, tempSurname, tempNationallity, tempGender, tempEducation, tempID;
     int tempAge;
 
     for (size_t i = 0; i < personSize; i++)
     {
-        myFile >> tempName >> tempSurname >> tempAge >> tempNationallity >> tempGender >> tempEducation;
-        personArray[i].setData(tempName, tempSurname, tempAge, tempNationallity, tempGender, tempEducation);
+        myFile1 >> tempName >> tempSurname >> tempAge >> tempNationallity >> tempGender >> tempEducation;
+        myFile2 >> tempID;
+        personArray[i].setData(tempName, tempSurname, tempAge, tempNationallity, tempGender, tempEducation, tempID);
     }
 }
 
@@ -55,6 +58,7 @@ void migrants::createArrayID() // fills id of persons which in person array
     for (size_t i = 0; i < personSize; i++)
     {
         personArray[i].createID();
+        myFile << personArray[i].getID() << endl;
     }
 }
 

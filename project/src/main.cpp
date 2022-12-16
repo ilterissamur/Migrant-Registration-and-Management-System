@@ -1,7 +1,9 @@
+#include <iostream>
 #include "person.h"
 #include "migrants.h"
 #include "admin.h"
 #include "functions.h"
+#include "employee.h"
 
 using namespace std;
 
@@ -9,11 +11,13 @@ int main()
 {
     srand(time(NULL));
 
-    int size = dataSize();
-    int choice;
-
-    person person;
+    int size, choice;
+    size = dataSize();
     migrants arr(size);
+    arr.createArrayID();
+    arr.readArrayData();
+    person person;
+    cout << "adas";
 
     /*admin a;
 
@@ -22,22 +26,11 @@ int main()
         cout << "Invalid login please login again" << endl;
     }*/
 
-    system("cls");
-
-    arr.createArrayID();
-
-    for (size_t i = 0; i < 6; i++)
-    {
-        cout << arr.personArray[i].getID() << endl;
-    }
-
     choice = displayMenu();
-
     while (choice != 4)
     {
         if (choice == 1)
         {
-            arr.readArrayData();
             person.createPerson();
             arr.addPerson(person);
             person.addFile();
@@ -51,7 +44,6 @@ int main()
             cout << "333";
         }
 
-        system("cls");
         choice = displayMenu();
     }
 }

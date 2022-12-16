@@ -1,7 +1,7 @@
 compilerun:program run
 
 program:functions main admin person migrants
-	g++ ./obj/functions.o ./obj/main.o ./obj/admin.o ./obj/person.o ./obj/migrants.o ./obj/camp.o ./obj/employee.o ./obj/refugee.o -o ./bin/program
+	g++ ./obj/functions.o ./obj/main.o ./obj/admin.o ./obj/person.o ./obj/migrants.o -o ./bin/program
 functions:
 	g++ -I "./include" -c ./src/functions.cpp -o ./obj/functions.o
 main:

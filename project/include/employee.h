@@ -7,12 +7,13 @@ using namespace std;
 class employee : public person
 {
 private:
+
     string job, city;
     int salary, tax;
-
+    
 public:
     employee();
-    void findJob(int a); // tunanın puana göre iş bulma
-    int takeTax(int a);  // salarye göre vergi alma
+    void findJob(int point); // finding job wrt point
+    int takeTax(int a);  // taking tax according to salary
     void display();
 };
