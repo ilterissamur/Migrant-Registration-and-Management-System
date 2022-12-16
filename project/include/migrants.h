@@ -14,10 +14,9 @@ public:
     person *personArray{nullptr};
 
     migrants(int a);
-    void addPerson(person &migrant1);
+    void addPerson(person &newPerson);
     void readArrayData();
     void createArrayID();
-    int filter(person m);
 };
 
 #endif

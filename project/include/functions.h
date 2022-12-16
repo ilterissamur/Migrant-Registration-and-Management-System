@@ -9,5 +9,6 @@ using namespace std;
 
 int displayMenu();
 int dataSize();
+int distributeBudget();
 
 #endif

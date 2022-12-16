@@ -1,14 +1,17 @@
 #include <iostream>
 #include <string>
+#include "refugee.h"
 
 using namespace std;
 
 class camp
 {
 private:
-    int refugeeNum, campBudget;
+    int refugeeSize, arraySize, campBudget;
     string city;
+    refugee *refugeeArray{nullptr};
 
 public:
-    void addNewRefugee();
+    void addNewRefugee(refugee &newRefugee);
+    camp(int numberOfRefugee);
 };

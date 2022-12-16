@@ -60,6 +60,47 @@ void person::setData(string name, string surname, int age, string nationallity, 
     this->id = id;
 }
 
+int person::filter(person p) // filters person is refugee or employee (BAKILACAK)
+{
+    if (p.getAge() < 18)
+    {
+        return 0;
+    }
+    else if (17 < p.getAge() && p.getAge() < 60)
+    {
+        cout << "Please input person's iq test point:";
+        cin >> iqPoint;
+
+        cout << "Please input person's mental test point:";
+        cin >> mentalPoint;
+
+        cout << "Please input person's acculturation test point:";
+        cin >> acculturationPoint;
+
+        cout << "Please input applicant's health test point:";
+        cin >> healthPoint;
+
+        personPoint = float(mentalPoint + acculturationPoint + healthPoint + iqPoint) / 4;
+
+        if (personPoint > 85)
+        {
+            return 3;
+        }
+        else if (personPoint > 70)
+        {
+            return 2;
+        }
+        else if (personPoint > 55)
+        {
+            return 1;
+        }
+        else
+        {
+            return -1;
+        }
+    }
+}
+
 string person::getName()
 {
     return name;

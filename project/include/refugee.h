@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include "person.h"
-#include "camp.h"
 
 using namespace std;
 

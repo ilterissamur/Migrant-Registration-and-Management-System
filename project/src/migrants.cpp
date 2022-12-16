@@ -58,72 +58,7 @@ void migrants::createArrayID() // fills id of persons which in person array
     for (size_t i = 0; i < personSize; i++)
     {
         personArray[i].createID();
-        myFile << personArray[i].getID() << endl;
-    }
-}
-
-int migrants::filter(person p) // filters person is refugee or employee (BAKILACAK)
-{
-
-    float personPoint;
-    int iqPoint, mentalPoint, talentPoint, healthPoint, acculturationPoint;
-
-    if (10 < p.getAge() && p.getAge() < 24)
-    {
-
-        cout << "Please input person's iq test point:";
-        cin >> iqPoint;
-
-        cout << "\nPlease input person's talent test point:";
-        cin >> talentPoint;
-
-        cout << "\nPlease input person's  health test point:";
-        cin >> healthPoint;
-
-        personPoint = float(iqPoint + talentPoint + healthPoint) / 3;
-
-        if (personPoint > 80)
-        {
-            return 1;
-        }
-        else if (personPoint > 60)
-        {
-            return 2;
-        }
-        else
-        {
-            cout << "Child's average point isn't enough!" << endl;
-        }
-    }
-    if (24 < p.getAge() && p.getAge() < 60)
-    {
-
-        cout << "Please input person's mental test point:";
-        cin >> mentalPoint;
-
-        cout << "Please input person's acculturation test point:";
-        cin >> acculturationPoint;
-
-        cout << "Please input applicant's health test point:";
-        cin >> healthPoint;
-
-        personPoint = float(mentalPoint + acculturationPoint + healthPoint) / 3;
-
-        if (personPoint > 90)
-        {
-            return 3;
-        }
-        else if (personPoint > 70)
-        {
-            return 4;
-        }
-        else if (personPoint > 55)
-        {
-            return 5;
-        }
-        else
-        {
-            cout << "Person's average point isn't enough!" << endl;
-        }
+        myFile << "\n"
+               << personArray[i].getID();
     }
 }

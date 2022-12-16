@@ -13,13 +13,15 @@ class person
 {
 protected:
     string id, name, surname, nationallity, gender, education;
-    int age;
+    int age, iqPoint, mentalPoint, healthPoint, acculturationPoint;
+    float personPoint;
 
 public:
     void createPerson();
     void createID();
     void addFile();
     void setData(string name, string surname, int age, string nationallity, string gender, string education, string id);
+    int filter(person p);
     string getName();
     string getSurname();
     int getAge();

@@ -16,8 +16,8 @@ int main()
     migrants arr(size);
     arr.createArrayID();
     arr.readArrayData();
-    person person;
-    cout << "adas";
+    person p;
+    employee e;
 
     /*admin a;
 
@@ -31,9 +31,30 @@ int main()
     {
         if (choice == 1)
         {
-            person.createPerson();
-            arr.addPerson(person);
-            person.addFile();
+            p.createPerson();
+            arr.addPerson(p);
+            p.addFile();
+            int control = p.filter(p);
+            if (control == 0)
+            {
+                cout << "Child can't work" << endl;
+            }
+            else if (control == -1)
+            {
+                cout << "Person's point is too low for working our country" << endl;
+            }
+            else if (control == 3)
+            {
+                e.findJob("A");
+            }
+            else if (control == 2)
+            {
+                e.findJob("B");
+            }
+            else if (control == 1)
+            {
+                e.findJob("C");
+            }
         }
         else if (choice == 2)
         {

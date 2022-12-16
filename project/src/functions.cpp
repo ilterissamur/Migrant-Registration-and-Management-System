@@ -53,3 +53,7 @@ int dataSize() // returns person number (line number) in data.txt
 
     return n;
 }
+
+int distributeBudget()
+{
+}
