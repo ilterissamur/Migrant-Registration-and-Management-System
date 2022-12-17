@@ -166,3 +166,24 @@ void Employee::findJob(string grade)
         myFile.close();
     }
 }
+
+void Employee::addEmployeeFile()
+{
+    ofstream myFile;
+    myFile.open("data.txt", ios::app);
+
+    myFile << id << " " << job << " " << city << " " << salary << endl;
+
+    myFile.close();
+}
+
+void Employee::setEmployeeData(string job, string city, int salary)
+{
+    this->job = job;
+    this->city = city;
+    this->salary = salary;
+}
+
+void Employee::createEmployee(Person &source)
+{
+}

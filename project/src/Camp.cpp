@@ -31,3 +31,8 @@ void Camp::addNewRefugee(Refugee &newRefugee)
         refugeeArray = temp;
     }
 }
+
+void Camp::setCampBudget(int newBudget)
+{
+    campBudget = newBudget;
+}
