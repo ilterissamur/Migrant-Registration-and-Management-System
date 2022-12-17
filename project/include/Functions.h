@@ -9,6 +9,6 @@ using namespace std;
 
 int displayMenu();
 int dataSize(string fileName, fstream &myFile);
-int distributeBudget();
+void calculateBudget();
 
 #endif

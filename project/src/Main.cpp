@@ -35,7 +35,7 @@ int main()
         if (choice == 1)
         {
             p.createPerson();
-            myArray.addPerson(p);
+           myArray.addPerson(p);
             p.addFile();
             int control = p.filter(p);
             if (control == 0)

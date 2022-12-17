@@ -68,35 +68,39 @@ int Person::filter(Person p) // filters person is refugee or employee (BAKILACAK
     }
     else if (17 < p.getAge() && p.getAge() < 60)
     {
-        cout << "Please input person's iq test point:";
+        cout << "\nPlease input person's iq test point:";
         cin >> iqPoint;
+        while (iqPoint <= 0 || iqPoint > 100)
+        {
+            cout << "\nInvalid value for iq point! Please enter new iq point:";
+            cin >> iqPoint;
+        }
 
-        cout << "Please input person's mental test point:";
+        cout << "\nPlease input person's mental test point:";
         cin >> mentalPoint;
 
-        cout << "Please input person's acculturation test point:";
+        while (mentalPoint <= 0 || mentalPoint > 100)
+        {
+            cout << "\nInvalid value for mental point! Please enter new mental point:";
+            cin >> mentalPoint;
+        }
+
+        cout << "\nPlease input person's acculturation test point:";
         cin >> acculturationPoint;
 
-        cout << "Please input applicant's health test point:";
+        while (acculturationPoint <= 0 || acculturationPoint > 100)
+        {
+            cout << "\nInvalid value for accularation point! Please enter new acculturation point:";
+            cin >> acculturationPoint;
+        }
+
+        cout << "\nPlease input applicant's health test point:";
         cin >> healthPoint;
 
-        personPoint = float(mentalPoint + acculturationPoint + healthPoint + iqPoint) / 4;
-
-        if (personPoint >= 85)
+        while (healthPoint <= 0 || healthPoint > 100)
         {
-            return 3;
-        }
-        else if (personPoint >= 70)
-        {
-            return 2;
-        }
-        else if (personPoint >= 55)
-        {
-            return 1;
-        }
-        else
-        {
-            return -1;
+            cout << "\nInvalid value for health point! Please enter new health point:";
+            cin >> healthPoint;
         }
     }
     else if (p.getAge() > 59)
@@ -104,7 +108,24 @@ int Person::filter(Person p) // filters person is refugee or employee (BAKILACAK
         return -2;
     }
 
-    return 4;
+    personPoint = float(mentalPoint + acculturationPoint + healthPoint + iqPoint) / 4;
+
+    if (personPoint >= 85)
+    {
+        return 3;
+    }
+    else if (personPoint >= 70)
+    {
+        return 2;
+    }
+    else if (personPoint >= 55)
+    {
+        return 1;
+    }
+    else
+    {
+        return -1;
+    }
 }
 
 string Person::getName()
