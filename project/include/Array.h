@@ -19,6 +19,7 @@ public:
     void readArrayData();
     void addPerson(Person &newPerson);
     void addEmployee(Employee &newEmployee);
+    void calculateBudget();
 };
 
 #endif

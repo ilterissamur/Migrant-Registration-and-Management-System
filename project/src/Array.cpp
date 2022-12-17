@@ -89,3 +89,19 @@ void Array::addEmployee(Employee &newEmployee)
         employeeArray = temp;
     }
 }
+
+void Array::calculateBudget()
+{
+    ofstream myFile;
+    myFile.open("budget.txt", ios::out);
+    double sum = 0;
+
+    for (size_t i = 0; i < employeeSize; i++)
+    {
+        sum += employeeArray[i].getTax();
+    }
+
+    myFile << sum;
+
+    myFile.close();
+}

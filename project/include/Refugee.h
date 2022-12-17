@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 #include "Person.h"
 
 using namespace std;
@@ -11,5 +12,7 @@ private:
     string camp;
 
 public:
-    int setCamp();
+    Refugee();
+    Refugee(Person &source);
+    void setCamp();
 };
