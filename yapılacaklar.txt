@@ -1,0 +1,4 @@
+budget distribute funciton
+setcamp refugeeSize ve kapasite ayarlama
+renk seçimi
+jobA B C getlinelı input
