@@ -36,3 +36,11 @@ void Camp::setCampBudget(int newBudget)
 {
     campBudget = newBudget;
 }
+
+void Camp::writeSize()
+{
+    ofstream myFile;
+    myFile.open("avaliableSize.txt", ios::out);
+
+    myFile << refugeeSize << endl;
+}

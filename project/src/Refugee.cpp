@@ -15,15 +15,18 @@ Refugee::Refugee(Person &source)
 
 void Refugee::setCamp()
 {
-    int option, j = 0;
+    int option, j = 0, tempSize;
     string tempString;
-    ifstream myFile;
-    myFile.open("camp.txt", ios::in);
+    ifstream myFile1;
+    ifstream myFile2;
+    myFile1.open("camp.txt", ios::in);
+    myFile2.open("avaliableSize.txt", ios::in);
 
-    while (!myFile.eof())
+    while (!myFile2.eof())
     {
-        myFile >> tempString;
-        cout << ++j << "- " << tempString << endl;
+        myFile1 >> tempString;
+        myFile2 >> tempSize;
+        cout << ++j << "- " << tempString << "Number of avaliable refugees: " << tempSize << endl;
     }
     cout << "Choose camp: ";
     cin >> option;
@@ -36,6 +39,9 @@ void Refugee::setCamp()
 
     for (size_t i = 0; i < option; i++)
     {
-        myFile >> camp;
+        myFile1 >> camp;
     }
+
+    myFile1.close();
+    myFile2.close();
 }

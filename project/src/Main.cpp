@@ -3,6 +3,7 @@
 #include "Array.h"
 #include "Admin.h"
 #include "Functions.h"
+#include "Refugee.h"
 
 using namespace std;
 
@@ -15,12 +16,13 @@ int main()
 
     size1 = dataSize("data.txt", myFile1);
     size2 = dataSize("employee.txt", myFile2);
+    myFile1.close();
+    myFile2.close();
+
     Array myArray(size1, size2);
-    /*Migrants arr(size);
-    arr.createArrayID();
-    arr.readArrayData();*/
+    myArray.readArrayData();
+
     Person p;
-    Employee e(p);
 
     /*admin a;
 
@@ -38,25 +40,42 @@ int main()
             myArray.addPerson(p);
             p.addFile();
             int control = p.filter(p);
+
             if (control == 0)
             {
                 cout << "Child can't work" << endl;
+                Refugee r(p);
             }
             else if (control == -1)
             {
                 cout << "Person's point is too low for working our country" << endl;
+                Refugee r(p);
+            }
+            else if (control == -2)
+            {
+                cout << "Person's age is too old for working our country" << endl;
+                Refugee r(p);
             }
             else if (control == 3)
             {
+                Employee e(p);
                 e.findJob("A");
+                myArray.addEmployee(e);
+                e.addEmployeeFile();
             }
             else if (control == 2)
             {
+                Employee e(p);
                 e.findJob("B");
+                myArray.addEmployee(e);
+                e.addEmployeeFile();
             }
             else if (control == 1)
             {
+                Employee e(p);
                 e.findJob("C");
+                myArray.addEmployee(e);
+                e.addEmployeeFile();
             }
         }
         else if (choice == 2)

@@ -14,4 +14,5 @@ public:
     void addNewRefugee(Refugee &newRefugee);
     Camp(int numberOfRefugee);
     void setCampBudget(int newBudget);
+    void writeSize();
 };

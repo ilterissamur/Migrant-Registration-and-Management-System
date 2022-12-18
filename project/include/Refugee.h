@@ -8,7 +8,6 @@ using namespace std;
 class Refugee : public Person
 {
 private:
-    int helpMoney;
     string camp;
 
 public:

@@ -29,6 +29,7 @@ public:
     string getGender();
     string getEducation();
     string getID();
+    Person();
 };
 
 #endif

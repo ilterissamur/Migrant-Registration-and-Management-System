@@ -39,11 +39,9 @@ void Person::addFile() // adds new person to data.txt
     myFile1.open("data.txt", ios::app);
     myFile2.open("id.txt", ios::app);
 
-    myFile1 << "\n"
-            << name << " " << surname << " " << age << " " << nationallity << " " << gender << " " << education;
+    myFile1 << name << " " << surname << " " << age << " " << nationallity << " " << gender << " " << education << endl;
 
-    myFile2 << "\n"
-            << id;
+    myFile2 << id << endl;
 
     myFile1.close();
     myFile2.close();
@@ -161,4 +159,8 @@ string Person::getEducation()
 string Person::getID()
 {
     return id;
+}
+
+Person::Person()
+{
 }

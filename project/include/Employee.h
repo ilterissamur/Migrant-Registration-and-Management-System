@@ -17,6 +17,5 @@ public:
   void setEmployeeData(string job, string city, int salary);
   Employee();
   Employee(Person &source);
-  void calculateTax();
   double getTax();
 };

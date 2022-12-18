@@ -26,8 +26,12 @@ void Employee::findJob(string grade)
             cin >> option;
         }
 
+        myFile.close();
+        myFile.open("jobA.txt", ios::in);
+
         for (size_t i = 0; i < option; i++)
         {
+            cout << "for loop" << endl;
             myFile >> job;
         }
 
@@ -44,7 +48,7 @@ void Employee::findJob(string grade)
         cout << "Choose city: ";
         cin >> option;
 
-        while (option <= 0 || option > 3)
+        while (option <= 0 || option > 5)
         {
             cout << "You entered invalid choice!! Please again enter your choose: ";
             cin >> option;
@@ -52,6 +56,7 @@ void Employee::findJob(string grade)
 
         for (size_t i = 0; i < option; i++)
         {
+            cout << "for loop" << endl;
             myFile >> city;
         }
 
@@ -66,7 +71,6 @@ void Employee::findJob(string grade)
         j = 0;
         while (!myFile.eof())
         {
-
             myFile >> tempString;
             cout << ++j << "- " << tempString << endl;
         }
@@ -81,6 +85,7 @@ void Employee::findJob(string grade)
 
         for (size_t i = 0; i < option; i++)
         {
+            cout << "for loop" << endl;
             myFile >> job;
         }
 
@@ -91,7 +96,6 @@ void Employee::findJob(string grade)
         j = 0;
         while (!myFile.eof())
         {
-
             myFile >> tempString;
             cout << ++j << "- " << tempString << endl;
         }
@@ -104,6 +108,7 @@ void Employee::findJob(string grade)
         }
         for (size_t i = 0; i < option; i++)
         {
+            cout << "for loop" << endl;
             myFile >> city;
         }
 
@@ -111,6 +116,7 @@ void Employee::findJob(string grade)
     }
     else if (grade == "C")
     {
+        string tempJob, tempCity = "aaaa";
         salary = 5000;
         tax = salary * 0.1;
 
@@ -119,7 +125,6 @@ void Employee::findJob(string grade)
         j = 0;
         while (!myFile.eof())
         {
-
             myFile >> tempString;
             cout << ++j << "- " << tempString << endl;
         }
@@ -134,8 +139,11 @@ void Employee::findJob(string grade)
 
         for (size_t i = 0; i < option; i++)
         {
-            myFile >> job;
+            cout << "for loop" << endl;
+            myFile >> tempJob;
         }
+
+        job = tempJob;
 
         myFile.close();
 
@@ -144,7 +152,6 @@ void Employee::findJob(string grade)
         j = 0;
         while (!myFile.eof())
         {
-
             myFile >> tempString;
             cout << ++j << "- " << tempString << endl;
         }
@@ -157,7 +164,8 @@ void Employee::findJob(string grade)
         }
         for (size_t i = 0; i < option; i++)
         {
-            myFile >> city;
+            cout << "for loop" << endl;
+            myFile >> tempCity;
         }
 
         myFile.close();
@@ -167,7 +175,7 @@ void Employee::findJob(string grade)
 void Employee::addEmployeeFile()
 {
     ofstream myFile;
-    myFile.open("data.txt", ios::app);
+    myFile.open("employee.txt", ios::app);
 
     myFile << id << " " << job << " " << city << " " << salary << endl;
 
@@ -188,6 +196,7 @@ Employee::Employee(Person &source)
     age = source.getAge();
     nationallity = source.getNationallity();
     gender = source.getNationallity();
+    id = source.getID();
 }
 
 Employee::Employee()
