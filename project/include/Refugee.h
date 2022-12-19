@@ -13,5 +13,6 @@ private:
 public:
     Refugee();
     Refugee(Person &source);
-    void setCamp();
+    int setCamp(int &refugeeSizeA, int &refugeeSizeB, int &refugeeSizeC);
+    void addCampFile(string fileName, ofstream &myFile);
 };

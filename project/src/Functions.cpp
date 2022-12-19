@@ -25,12 +25,12 @@ int displayMenu() // displays menu in main
     return selection;
 }
 
-int dataSize(string fileName, fstream &myFile) // returns person number (line number) in data.txt
+int dataSize(string fileName, ifstream &myFile) // returns person number (line number) in data.txt
 {
     string tempLine;
     int n{0};
 
-    myFile.open("data.txt", ios::in);
+    myFile.open(fileName, ios::in);
 
     if (!myFile)
     {

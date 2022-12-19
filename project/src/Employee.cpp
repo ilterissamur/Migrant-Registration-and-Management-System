@@ -3,52 +3,25 @@
 void Employee::findJob(string grade)
 {
     int option, j = 0;
-    string tempString;
-    ifstream myFile;
+    string tempString1, tempString2;
+    ifstream myFile1, myFile2;
+
     if (grade == "A")
     {
         salary = 20000;
         tax = salary * 0.2;
 
-        myFile.open("jobA.txt", ios::in);
+        myFile1.open("job.txt", ios::in);
+        myFile2.open("job.txt", ios::in);
 
-        while (!myFile.eof())
+        for (size_t i = 0; i < 5; i++)
         {
-            myFile >> tempString;
-            cout << ++j << "- " << tempString << endl;
+            myFile1 >> tempString1 >> tempString2;
+            cout << ++j << "- " << tempString1 << " " << tempString2 << endl;
         }
         cout << "Choose school: ";
         cin >> option;
-
-        while (option <= 0 || option > 3)
-        {
-            cout << "You entered invalid choice!! Please again enter your choose: ";
-            cin >> option;
-        }
-
-        myFile.close();
-        myFile.open("jobA.txt", ios::in);
-
-        for (size_t i = 0; i < option; i++)
-        {
-            cout << "for loop" << endl;
-            myFile >> job;
-        }
-
-        myFile.close();
-
-        myFile.open("cityA.txt", ios::in);
-
-        j = 0;
-        while (!myFile.eof())
-        {
-            myFile >> tempString;
-            cout << ++j << "- " << tempString << endl;
-        }
-        cout << "Choose city: ";
-        cin >> option;
-
-        while (option <= 0 || option > 5)
+        while (option < 1 || option > 5)
         {
             cout << "You entered invalid choice!! Please again enter your choose: ";
             cin >> option;
@@ -56,28 +29,36 @@ void Employee::findJob(string grade)
 
         for (size_t i = 0; i < option; i++)
         {
-            cout << "for loop" << endl;
-            myFile >> city;
+            myFile2 >> tempString1 >> tempString2;
         }
 
-        myFile.close();
+        job = tempString1 + " " + tempString2;
+
+        myFile1.close();
+        myFile2.close();
     }
     else if (grade == "B")
     {
-        salary = 10000;
+        salary = 15000;
         tax = salary * 0.15;
 
-        myFile.open("jobB.txt", ios::in);
         j = 0;
-        while (!myFile.eof())
+        myFile1.open("job.txt", ios::in);
+        myFile2.open("job.txt", ios::in);
+
+        for (size_t i = 0; i < 5; i++)
         {
-            myFile >> tempString;
-            cout << ++j << "- " << tempString << endl;
+            myFile1 >> tempString1 >> tempString2;
+            myFile2 >> tempString1 >> tempString2;
+        }
+        for (size_t i = 0; i < 5; i++)
+        {
+            myFile1 >> tempString1 >> tempString2;
+            cout << ++j << "- " << tempString1 << " " << tempString2 << endl;
         }
         cout << "Choose school: ";
         cin >> option;
-
-        while (option <= 0 || option > 3)
+        while (option < 1 || option > 5)
         {
             cout << "You entered invalid choice!! Please again enter your choose: ";
             cin >> option;
@@ -85,53 +66,36 @@ void Employee::findJob(string grade)
 
         for (size_t i = 0; i < option; i++)
         {
-            cout << "for loop" << endl;
-            myFile >> job;
+            myFile2 >> tempString1 >> tempString2;
         }
 
-        myFile.close();
+        job = tempString1 + " " + tempString2;
 
-        myFile.open("cityB.txt", ios::in);
-
-        j = 0;
-        while (!myFile.eof())
-        {
-            myFile >> tempString;
-            cout << ++j << "- " << tempString << endl;
-        }
-        cout << "Choose city: ";
-        cin >> option;
-        while (option <= 0 || option > 5)
-        {
-            cout << "You entered invalid choice!! Please again enter your choose: ";
-            cin >> option;
-        }
-        for (size_t i = 0; i < option; i++)
-        {
-            cout << "for loop" << endl;
-            myFile >> city;
-        }
-
-        myFile.close();
+        myFile1.close();
+        myFile2.close();
     }
     else if (grade == "C")
     {
-        string tempJob, tempCity = "aaaa";
         salary = 5000;
         tax = salary * 0.1;
 
-        myFile.open("jobC.txt", ios::in);
-
         j = 0;
-        while (!myFile.eof())
+        myFile1.open("job.txt", ios::in);
+        myFile2.open("job.txt", ios::in);
+
+        for (size_t i = 0; i < 10; i++)
         {
-            myFile >> tempString;
-            cout << ++j << "- " << tempString << endl;
+            myFile1 >> tempString1 >> tempString2;
+            myFile2 >> tempString1 >> tempString2;
+        }
+        for (size_t i = 0; i < 5; i++)
+        {
+            myFile1 >> tempString1 >> tempString2;
+            cout << ++j << "- " << tempString1 << " " << tempString2 << endl;
         }
         cout << "Choose school: ";
         cin >> option;
-
-        while (option <= 0 || option > 5)
+        while (option < 1 || option > 5)
         {
             cout << "You entered invalid choice!! Please again enter your choose: ";
             cin >> option;
@@ -139,36 +103,13 @@ void Employee::findJob(string grade)
 
         for (size_t i = 0; i < option; i++)
         {
-            cout << "for loop" << endl;
-            myFile >> tempJob;
+            myFile2 >> tempString1 >> tempString2;
         }
 
-        job = tempJob;
+        job = tempString1 + " " + tempString2;
 
-        myFile.close();
-
-        myFile.open("cityC.txt", ios::in);
-
-        j = 0;
-        while (!myFile.eof())
-        {
-            myFile >> tempString;
-            cout << ++j << "- " << tempString << endl;
-        }
-        cout << "Choose city: ";
-        cin >> option;
-        while (option <= 0 || option > 5)
-        {
-            cout << "You entered invalid choice!! Please again enter your choose: ";
-            cin >> option;
-        }
-        for (size_t i = 0; i < option; i++)
-        {
-            cout << "for loop" << endl;
-            myFile >> tempCity;
-        }
-
-        myFile.close();
+        myFile1.close();
+        myFile2.close();
     }
 }
 

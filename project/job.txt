@@ -1,0 +1,15 @@
+Medicine School
+Engineering School
+Law School
+Teacher School
+Economy School
+Mechanic School
+Cooker School
+Carpenter School
+Hairstylist School
+Driver School
+Garson School
+Dyer School
+Builder School
+Farmer School
+Dustman School

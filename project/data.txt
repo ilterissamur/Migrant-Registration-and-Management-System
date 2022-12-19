@@ -1,19 +1,4 @@
-ali akbar 25 afgan male high
-yunus ahmad 32 iraq male high
-tuna malik 32 syria male low
-yed dey 31 iraq male high
-ilteris samur 31 syria male high
-yed bey 45 iraq male low
-yed bey 34 iraq male high
-tuna gultekin 31 iran male low
-yed bey 21 turk male ultra
-ilteris samur 21 turk male ultra
-muhamed salah 31 misir male low
-ilteris samur 21 turk male low
-enner valencia 35 ecuador male
-ahmed ali 34 iraq male low
-vincent aboubakar 32 cameroon male low
-cristiano ronaldo 37 portugal male 100
-lionel messi 25 argentina male none
-serigo ramos 38 spain male high
-lautaro martinez 25 arjannnn male low
+ilteris samur 35 iraq male 
+yunus dincel 40 syria male 
+tuna gultekin 50 iran male 
+cagri sssson 23 turko male 

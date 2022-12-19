@@ -12,8 +12,6 @@ void Person::createPerson() // takes new person from user
     cin >> nationallity;
     cout << "Enter gender: ";
     cin >> gender;
-    cout << "Enter education level: ";
-    cin >> education;
 
     createID();
 }
@@ -39,7 +37,7 @@ void Person::addFile() // adds new person to data.txt
     myFile1.open("data.txt", ios::app);
     myFile2.open("id.txt", ios::app);
 
-    myFile1 << name << " " << surname << " " << age << " " << nationallity << " " << gender << " " << education << endl;
+    myFile1 << name << " " << surname << " " << age << " " << nationallity << " " << gender << " " << endl;
 
     myFile2 << id << endl;
 
@@ -47,14 +45,13 @@ void Person::addFile() // adds new person to data.txt
     myFile2.close();
 }
 
-void Person::setData(string name, string surname, int age, string nationallity, string gender, string education, string id) // fills person attributes
+void Person::setData(string name, string surname, int age, string nationallity, string gender, string id) // fills person attributes
 {
     this->name = name;
     this->surname = surname;
     this->age = age;
     this->nationallity = nationallity;
     this->gender = gender;
-    this->education = education;
     this->id = id;
 }
 
@@ -149,11 +146,6 @@ string Person::getNationallity()
 string Person::getGender()
 {
     return gender;
-}
-
-string Person::getEducation()
-{
-    return education;
 }
 
 string Person::getID()

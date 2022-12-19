@@ -3,7 +3,8 @@
 #include "Array.h"
 #include "Admin.h"
 #include "Functions.h"
-#include "Refugee.h"
+#include "Color.h"
+#include "Camp.h"
 
 using namespace std;
 
@@ -11,18 +12,56 @@ int main()
 {
     srand(time(NULL));
 
-    fstream myFile1, myFile2;
+    ifstream myFile1, myFile2;
     int size1, size2, choice;
 
     size1 = dataSize("data.txt", myFile1);
     size2 = dataSize("employee.txt", myFile2);
-    myFile1.close();
-    myFile2.close();
 
     Array myArray(size1, size2);
     myArray.readArrayData();
+    /*
+        myFile1.open("campAntep.txt", ios::in);
+        size1 = dataSize("campAntep.txt", myFile1);
+        Camp campAntep(size1);
+        myFile1.close();
 
+        myFile1.open("campHatay.txt", ios::in);
+        size1 = dataSize("campHatay.txt", myFile1);
+        Camp campHatay(size1);
+        myFile1.close();
+
+        myFile1.open("campKilis.txt", ios::in);
+        size1 = dataSize("campKilis.txt", myFile1);
+        Camp campKilis(size1);
+        myFile1.close();
+    */
     Person p;
+    Color c;
+
+    int cs1, cs2, cs3;
+
+    /* cs1 = campAntep.getRefugeesize();
+    cs2 = campHatay.getRefugeesize();
+    cs3 = campKilis.getRefugeesize();
+    */
+    /*c.printDefault("DENEME");
+    c.printBlack("DENEME");
+    c.printDarkRed("DENEME");
+    c.printDarkGreen("DENEME");
+    c.printDarkYellow("DENEME");
+    c.printDarkBlue("DENEME");
+    c.printDarkMagenta("DENEME");
+    c.printDarkCyan("DENEME");
+    c.printLightGray("DENEME");
+    c.printDarkGray("DENEME");
+    c.printRed("DENEME");
+    c.printGreen("DENEME");
+    c.printOrange("DENEME");
+    c.printBlue("DENEME");
+    c.printMagenta("DENEME");
+    c.printCyan("DENEME");
+    c.printWhite("DENEME");*/
 
     /*admin a;
 
@@ -36,25 +75,44 @@ int main()
     {
         if (choice == 1)
         {
+            ofstream campFile;
+
             p.createPerson();
             myArray.addPerson(p);
             p.addFile();
             int control = p.filter(p);
 
-            if (control == 0)
+            if (control == 0 || control == -1 || control == -2)
             {
-                cout << "Child can't work" << endl;
+                if (control == 0)
+                {
+                    cout << "Child can't work" << endl;
+                }
+                else if (control == -1)
+                {
+                    cout << "Person's point is too low for working our country" << endl;
+                }
+                else if (control == -2)
+                {
+                    cout << "Person's age is too old for working our country" << endl;
+                }
+
                 Refugee r(p);
-            }
-            else if (control == -1)
-            {
-                cout << "Person's point is too low for working our country" << endl;
-                Refugee r(p);
-            }
-            else if (control == -2)
-            {
-                cout << "Person's age is too old for working our country" << endl;
-                Refugee r(p);
+
+                int campChoose = r.setCamp(cs1, cs2, cs3);
+
+                if (campChoose == 1)
+                {
+                    r.addCampFile("campAntep.txt", campFile);
+                }
+                if (campChoose == 2)
+                {
+                    r.addCampFile("campHatay.txt", campFile);
+                }
+                if (campChoose == 3)
+                {
+                    r.addCampFile("campKilis.txt", campFile);
+                }
             }
             else if (control == 3)
             {

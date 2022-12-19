@@ -19,14 +19,14 @@ void Array::readArrayData()
     myFile2.open("id.txt", ios::in);
     myFile3.open("employee.txt");
 
-    string tempName, tempSurname, tempNationallity, tempGender, tempEducation, tempID, tempJob, tempCity;
+    string tempName, tempSurname, tempNationallity, tempGender, tempID, tempJob, tempCity;
     int tempAge, tempSalary;
 
     for (size_t i = 0; i < personSize; i++)
     {
-        myFile1 >> tempName >> tempSurname >> tempAge >> tempNationallity >> tempGender >> tempEducation;
+        myFile1 >> tempName >> tempSurname >> tempAge >> tempNationallity >> tempGender;
         myFile2 >> tempID;
-        personArray[i].setData(tempName, tempSurname, tempAge, tempNationallity, tempGender, tempEducation, tempID);
+        personArray[i].setData(tempName, tempSurname, tempAge, tempNationallity, tempGender, tempID);
     }
 
     for (size_t i = 0; i < employeeSize; i++)
