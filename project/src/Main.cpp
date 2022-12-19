@@ -10,6 +10,7 @@ using namespace std;
 
 int main()
 {
+    /*
     srand(time(NULL));
 
     ifstream myFile1, myFile2;
@@ -20,7 +21,7 @@ int main()
 
     Array myArray(size1, size2);
     myArray.readArrayData();
-    /*
+
         myFile1.open("campAntep.txt", ios::in);
         size1 = dataSize("campAntep.txt", myFile1);
         Camp campAntep(size1);
@@ -35,17 +36,17 @@ int main()
         size1 = dataSize("campKilis.txt", myFile1);
         Camp campKilis(size1);
         myFile1.close();
-    */
+
     Person p;
     Color c;
 
     int cs1, cs2, cs3;
 
-    /* cs1 = campAntep.getRefugeesize();
+    /cs1 = campAntep.getRefugeesize();
     cs2 = campHatay.getRefugeesize();
     cs3 = campKilis.getRefugeesize();
-    */
-    /*c.printDefault("DENEME");
+
+    c.printDefault("DENEME");
     c.printBlack("DENEME");
     c.printDarkRed("DENEME");
     c.printDarkGreen("DENEME");
@@ -61,14 +62,14 @@ int main()
     c.printBlue("DENEME");
     c.printMagenta("DENEME");
     c.printCyan("DENEME");
-    c.printWhite("DENEME");*/
+    c.printWhite("DENEME");
 
-    /*admin a;
+    admin a;
 
     while (!a.login())
     {
         cout << "Invalid login please login again" << endl;
-    }*/
+    }
 
     choice = displayMenu();
     while (choice != 4)
@@ -147,4 +148,5 @@ int main()
 
         choice = displayMenu();
     }
+    */
 }

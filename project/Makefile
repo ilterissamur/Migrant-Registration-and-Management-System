@@ -1,7 +1,7 @@
 compilerun:program run
 
-program:functions main admin person employee camp refugee array color
-	g++ ./obj/Functions.o ./obj/Main.o ./obj/Admin.o ./obj/Person.o ./obj/Employee.o ./obj/Camp.o ./obj/Refugee.o ./obj/Array.o ./obj/Color.o -o ./bin/program
+program:functions main admin person employee refugee array color
+	g++ ./obj/Functions.o ./obj/Main.o ./obj/Admin.o ./obj/Person.o ./obj/Employee.o ./obj/Refugee.o ./obj/Array.o ./obj/Color.o -o ./bin/program
 functions:
 	g++ -I "./include" -c ./src/Functions.cpp -o ./obj/Functions.o
 main:
@@ -10,8 +10,6 @@ admin:
 	g++ -I "./include" -c ./src/Admin.cpp -o ./obj/Admin.o
 person:
 	g++ -I "./include" -c ./src/Person.cpp -o ./obj/Person.o
-camp:
-	g++ -I "./include" -c ./src/Camp.cpp -o ./obj/Camp.o
 employee:
 	g++ -I "./include" -c ./src/Employee.cpp -o ./obj/Employee.o
 refugee:

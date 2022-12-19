@@ -1,4 +1,0 @@
-71536389 Medicine  -129040384
-33585292 EngineeringSchool  20000
-54491258 HairstylistSchool  15000
-79677424 DustmanSchool  5000

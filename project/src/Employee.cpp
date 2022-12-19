@@ -36,6 +36,32 @@ void Employee::findJob(string grade)
 
         myFile1.close();
         myFile2.close();
+
+        myFile1.open("city.txt", ios::in);
+        myFile2.open("city.txt", ios::in);
+
+        j = 0;
+
+        for (size_t i = 0; i < 5; i++)
+        {
+            myFile1 >> tempString1;
+            cout << ++j << "- " << tempString1 << endl;
+        }
+        cout << "Choose city: ";
+        cin >> option;
+        while (option < 1 || option > 5)
+        {
+            cout << "You entered invalid choice!! Please again enter your choose: ";
+            cin >> option;
+        }
+
+        for (size_t i = 0; i < option; i++)
+        {
+            myFile2 >> city;
+        }
+
+        myFile1.close();
+        myFile2.close();
     }
     else if (grade == "B")
     {
@@ -73,6 +99,34 @@ void Employee::findJob(string grade)
 
         myFile1.close();
         myFile2.close();
+
+        myFile1.open("city.txt", ios::in);
+        myFile2.open("city.txt", ios::in);
+
+        j = 0;
+
+        for (size_t i = 0; i < 5; i++)
+        {
+            myFile1 >> tempString1;
+            myFile2 >> tempString2;
+        }
+        for (size_t i = 0; i < 5; i++)
+        {
+            myFile1 >> tempString1;
+            cout << ++j << "- " << tempString1 << endl;
+        }
+        cout << "Choose city: ";
+        cin >> option;
+        while (option < 1 || option > 5)
+        {
+            cout << "You entered invalid choice!! Please again enter your choose: ";
+            cin >> option;
+        }
+
+        for (size_t i = 0; i < option; i++)
+        {
+            myFile2 >> city;
+        }
     }
     else if (grade == "C")
     {
@@ -110,6 +164,34 @@ void Employee::findJob(string grade)
 
         myFile1.close();
         myFile2.close();
+
+        myFile1.open("city.txt", ios::in);
+        myFile2.open("city.txt", ios::in);
+
+        j = 0;
+
+        for (size_t i = 0; i < 10; i++)
+        {
+            myFile1 >> tempString1;
+            myFile2 >> tempString2;
+        }
+        for (size_t i = 0; i < 5; i++)
+        {
+            myFile1 >> tempString1;
+            cout << ++j << "- " << tempString1 << endl;
+        }
+        cout << "Choose city: ";
+        cin >> option;
+        while (option < 1 || option > 5)
+        {
+            cout << "You entered invalid choice!! Please again enter your choose: ";
+            cin >> option;
+        }
+
+        for (size_t i = 0; i < option; i++)
+        {
+            myFile2 >> city;
+        }
     }
 }
 

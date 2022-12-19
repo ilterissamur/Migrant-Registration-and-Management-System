@@ -5,19 +5,20 @@
 #include <fstream>
 #include "Person.h"
 #include "Employee.h"
+#include "Refugee.h"
 
 class Array
 {
 private:
-    int personArraySize, employeeArraySize, personSize, employeeSize, employeeCounter, personCounter;
+    int refugeeArraySize, employeeArraySize, refugeeSize, employeeSize;
 
 public:
-    Person *personArray{nullptr};
+    Refugee *refugeeArray{nullptr};
     Employee *employeeArray{nullptr};
 
-    Array(int numberOfPerson, int numberOfEmployee);
+    Array(int numberOfRefugee, int numberOfEmployee);
     void readArrayData();
-    void addPerson(Person &newPerson);
+    void addRefugee(Refugee &newRefugee);
     void addEmployee(Employee &newEmployee);
     void calculateBudget();
 };

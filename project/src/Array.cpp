@@ -1,12 +1,12 @@
 #include "Array.h"
 
-Array::Array(int numberOfPerson, int numberOfEmployee)
+Array::Array(int numberOfRefugee, int numberOfEmployee)
 {
-    personSize = numberOfPerson;
+    refugeeSize = numberOfRefugee;
     employeeSize = numberOfEmployee;
-    personArraySize = numberOfPerson + 10;
+    refugeeArraySize = numberOfRefugee + 10;
     employeeArraySize = numberOfEmployee + 10;
-    personArray = new Person[personArraySize];
+    refugeeArray = new Refugee[refugeeArraySize];
     employeeArray = new Employee[employeeArraySize];
 }
 
@@ -14,54 +14,50 @@ void Array::readArrayData()
 {
     ifstream myFile1;
     ifstream myFile2;
-    ifstream myFile3;
-    myFile1.open("data.txt", ios::in);
-    myFile2.open("id.txt", ios::in);
-    myFile3.open("employee.txt");
+    myFile1.open("employee.txt", ios::in);
+    myFile2.open("refugee.txt", ios::in);
 
-    string tempName, tempSurname, tempNationallity, tempGender, tempID, tempJob, tempCity;
+    string tempID, tempName, tempSurname, tempNationallity, tempGender, tempJob, tempCity;
     int tempAge, tempSalary;
 
-    for (size_t i = 0; i < personSize; i++)
+    /*for (size_t i = 0; i < refugeeSize; i++)
     {
-        myFile1 >> tempName >> tempSurname >> tempAge >> tempNationallity >> tempGender;
-        myFile2 >> tempID;
-        personArray[i].setData(tempName, tempSurname, tempAge, tempNationallity, tempGender, tempID);
+        myFile1 >> tempID >> tempName >> tempSurname >> tempAge >> tempNationallity >> tempGender >> tempJob >> tempCity >> tempSalary;
+        refugeeArray[i].setData(tempName, tempSurname, tempAge, tempNationallity, tempGender, tempID);
     }
 
     for (size_t i = 0; i < employeeSize; i++)
     {
         myFile3 >> tempJob >> tempCity >> tempSalary;
         employeeArray[i].setEmployeeData(tempJob, tempCity, tempSalary);
-    }
+    }*/
 
     myFile1.close();
     myFile2.close();
-    myFile3.close();
 }
 
-void Array::addPerson(Person &newPerson)
+void Array::addRefugee(Refugee &newRefugee)
 {
-    if (personSize < personArraySize)
+    if (refugeeSize < refugeeArraySize)
     {
-        personArray[personSize] = newPerson;
-        personSize++;
+        refugeeArray[refugeeSize] = newRefugee;
+        refugeeSize++;
     }
     else
     {
-        personArraySize = personArraySize + 10;
-        Person *temp = new Person[personArraySize];
+        refugeeArraySize = refugeeArraySize + 10;
+        Refugee *temp = new Refugee[refugeeArraySize];
 
-        for (size_t i = 0; i < personSize; i++)
+        for (size_t i = 0; i < refugeeSize; i++)
         {
-            temp[i] = personArray[i];
+            temp[i] = refugeeArray[i];
         }
 
-        temp[personSize] = newPerson;
-        personSize++;
+        temp[refugeeSize] = newRefugee;
+        refugeeSize++;
 
-        delete[] personArray;
-        personArray = temp;
+        delete[] refugeeArray;
+        refugeeArray = temp;
     }
 }
 
