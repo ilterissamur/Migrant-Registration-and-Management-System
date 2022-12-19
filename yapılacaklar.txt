@@ -1,4 +1,7 @@
-budget distribute funciton
-setcamp refugeeSize ve kapasite ayarlama
-renk seçimi
-jobA B C getlinelı input
+person array silinecek ve yerine refugee array (3 tane camp arryin birleşimi) yapılacak
+menü renk seçimi ve ayarlaması yapılacak
+terminal temizleme eklenecek
+main başındaki filelar open close durumu ayarlanacak
+main düzenlenecek
+data ayarlanacak
+
