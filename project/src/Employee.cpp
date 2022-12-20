@@ -200,13 +200,19 @@ void Employee::addEmployeeFile()
     ofstream myFile;
     myFile.open("employee.txt", ios::app);
 
-    myFile << id << " " << job << " " << city << " " << salary << endl;
+    myFile << id << " " << name << " " << surname << " " << age << " " << nationallity << " " << gender << " " << job << " " << city << " " << salary << endl;
 
     myFile.close();
 }
 
-void Employee::setEmployeeData(string job, string city, int salary)
+void Employee::setEmployeeData(string id, string name, string surname, int age, string nationallity, string gender, string job, string city, int salary)
 {
+    this->id = id;
+    this->name = name;
+    this->surname = surname;
+    this->age = age;
+    this->nationallity = nationallity;
+    this->gender = gender;
     this->job = job;
     this->city = city;
     this->salary = salary;

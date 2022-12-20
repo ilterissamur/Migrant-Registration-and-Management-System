@@ -19,8 +19,6 @@ protected:
 public:
     void createPerson();
     void createID();
-    void addFile();
-    void setData(string name, string surname, int age, string nationallity, string gender, string id);
     int filter(Person p);
     string getName();
     string getSurname();

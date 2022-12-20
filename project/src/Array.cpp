@@ -17,20 +17,20 @@ void Array::readArrayData()
     myFile1.open("employee.txt", ios::in);
     myFile2.open("refugee.txt", ios::in);
 
-    string tempID, tempName, tempSurname, tempNationallity, tempGender, tempJob, tempCity;
+    string tempID, tempName, tempSurname, tempNationallity, tempGender, tempJob, tempCity, tempCamp;
     int tempAge, tempSalary;
-
-    /*for (size_t i = 0; i < refugeeSize; i++)
-    {
-        myFile1 >> tempID >> tempName >> tempSurname >> tempAge >> tempNationallity >> tempGender >> tempJob >> tempCity >> tempSalary;
-        refugeeArray[i].setData(tempName, tempSurname, tempAge, tempNationallity, tempGender, tempID);
-    }
 
     for (size_t i = 0; i < employeeSize; i++)
     {
-        myFile3 >> tempJob >> tempCity >> tempSalary;
-        employeeArray[i].setEmployeeData(tempJob, tempCity, tempSalary);
-    }*/
+        myFile1 >> tempID >> tempName >> tempSurname >> tempAge >> tempNationallity >> tempGender >> tempJob >> tempCity >> tempSalary;
+        employeeArray[i].setEmployeeData(tempID, tempName, tempSurname, tempAge, tempNationallity, tempGender, tempJob, tempCity, tempSalary);
+    }
+
+    for (size_t i = 0; i < refugeeSize; i++)
+    {
+        myFile2 >> tempID >> tempName >> tempSurname >> tempAge >> tempNationallity >> tempGender >> tempCamp;
+        refugeeArray[i].setRefugeeData(tempID, tempName, tempSurname, tempAge, tempNationallity, tempGender, tempCamp);
+    }
 
     myFile1.close();
     myFile2.close();

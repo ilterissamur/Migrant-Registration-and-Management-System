@@ -1,5 +1,9 @@
 #include "Person.h"
 
+Person::Person()
+{
+}
+
 void Person::createPerson() // takes new person from user
 {
     cout << "Enter name: ";
@@ -28,26 +32,6 @@ void Person::createID() // create person id randomly
     }
 
     id = tempID;
-}
-
-void Person::addFile() // adds new person to data.txt
-{
-    ofstream myFile1;
-    myFile1.open("data.txt", ios::app);
-
-    myFile1 << id << " " << name << " " << surname << " " << age << " " << nationallity << " " << gender << " " << endl;
-
-    myFile1.close();
-}
-
-void Person::setData(string name, string surname, int age, string nationallity, string gender, string id) // fills person attributes
-{
-    this->name = name;
-    this->surname = surname;
-    this->age = age;
-    this->nationallity = nationallity;
-    this->gender = gender;
-    this->id = id;
 }
 
 int Person::filter(Person p) // filters person is refugee or employee (BAKILACAK)
@@ -146,8 +130,4 @@ string Person::getGender()
 string Person::getID()
 {
     return id;
-}
-
-Person::Person()
-{
 }

@@ -14,31 +14,27 @@ Refugee::Refugee(Person &source)
     id = source.getID();
 }
 
-int Refugee::setCamp(int &refugeeSizeA, int &refugeeSizeB, int &refugeeSizeC)
+int Refugee::setCamp()
 {
-    int option, j = 0;
-    string tempString;
-    ifstream myFile1;
-    ifstream myFile2;
+    ifstream myFile1, myFile2;
     myFile1.open("camp.txt", ios::in);
     myFile2.open("camp.txt", ios::in);
 
-    myFile1 >> tempString;
-    cout << ++j << "- " << tempString << "Number of avaliable refugees: " << refugeeSizeA << endl;
-    myFile1 >> tempString;
-    cout << ++j << "- " << tempString << "Number of avaliable refugees: " << refugeeSizeB << endl;
-    myFile1 >> tempString;
-    cout << ++j << "- " << tempString << "Number of avaliable refugees: " << refugeeSizeC << endl;
+    int option, j = 0;
+    string tempString;
 
+    for (size_t i = 0; i < 3; i++)
+    {
+        myFile1 >> tempString;
+        cout << ++j << "- " << tempString << endl;
+    }
     cout << "Choose camp: ";
     cin >> option;
-
     while (option < 1 || option > 3)
     {
         cout << "You entered invalid choice!! Please again enter your choose: ";
         cin >> option;
     }
-
     for (size_t i = 0; i < option; i++)
     {
         myFile2 >> camp;
@@ -46,15 +42,25 @@ int Refugee::setCamp(int &refugeeSizeA, int &refugeeSizeB, int &refugeeSizeC)
 
     myFile1.close();
     myFile2.close();
-
-    return option;
 }
 
-void Refugee::addCampFile(string fileName, ofstream &myFile)
+void Refugee::addRefugeeFile()
 {
-    myFile.open(fileName, ios::app);
+    ofstream myFile;
+    myFile.open("refugee.txt", ios::app);
 
-    myFile << id << " " << name << " " << surname << endl;
+    myFile << id << " " << name << " " << surname << " " << age << " " << nationallity << " " << gender << " " << camp << endl;
 
     myFile.close();
+}
+
+void Refugee::setRefugeeData(string tempID, string tempName, string tempSurname, int tempAge, string tempNationallity, string tempGender, string tempCamp)
+{
+    this->id = id;
+    this->name = name;
+    this->surname = surname;
+    this->age = age;
+    this->nationallity = nationallity;
+    this->gender = gender;
+    this->camp = camp;
 }

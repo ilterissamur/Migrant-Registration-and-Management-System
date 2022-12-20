@@ -1,10 +1,11 @@
 #include <iostream>
-#include "Person.h"
 #include "Array.h"
-#include "Admin.h"
+#include "Person.h"
+#include "Employee.h"
+#include "Refugee.h"
 #include "Functions.h"
+#include "Admin.h"
 #include "Color.h"
-#include "Camp.h"
 
 using namespace std;
 

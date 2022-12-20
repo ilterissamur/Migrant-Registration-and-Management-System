@@ -14,7 +14,7 @@ private:
 public:
   void findJob(string grade);
   void addEmployeeFile();
-  void setEmployeeData(string job, string city, int salary);
+  void setEmployeeData(string id, string name, string surname, int age, string nationallity, string gender, string job, string city, int salary);
   Employee();
   Employee(Person &source);
   double getTax();
