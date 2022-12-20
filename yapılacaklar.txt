@@ -1,12 +1,11 @@
+array ve kopyalama kontrol edilecek
+
 menü renk seçimi ve ayarlaması yapılacak
 
 terminal temizlemeler eklenecek
-
-main başındaki filelar open close durumu ayarlanacak
 
 main düzenlenecek
 
 data ayarlanacak
 
 guilty class yazılacak
-
