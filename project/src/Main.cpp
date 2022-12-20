@@ -11,13 +11,18 @@ int main()
     srand(time(NULL));
 
     ifstream myFile1, myFile2;
-    int size1, size2, choice;
+    int size1, size2, choice, budget, usingBudget;
 
-    size1 = dataSize("employee.txt", myFile1) - 1;
-    size2 = dataSize("refugee.txt", myFile2) - 1;
+    size1 = calculateDataSize("employee.txt", myFile1) - 1;
+    size2 = calculateDataSize("refugee.txt", myFile2) - 1;
 
     Array myArray(size1, size2);
     myArray.readArrayData();
+
+    myFile1.open("budget.txt", ios::in);
+    myFile1 >> budget;
+    myFile1 >> usingBudget;
+    myFile1.close();
 
     Person person;
     Color color;
@@ -46,6 +51,7 @@ int main()
                 employee.findJob("A");
                 myArray.addEmployee(employee);
                 employee.addEmployeeFile();
+                budget += employee.getTax();
             }
             else if (control == 2)
             {
@@ -55,6 +61,7 @@ int main()
                 employee.findJob("B");
                 myArray.addEmployee(employee);
                 employee.addEmployeeFile();
+                budget += employee.getTax();
             }
             else if (control == 1)
             {
@@ -64,31 +71,52 @@ int main()
                 employee.findJob("C");
                 myArray.addEmployee(employee);
                 employee.addEmployeeFile();
+                budget += employee.getTax();
             }
             else if (control == -1)
             {
                 cout << "Person's age is too young for working our country" << endl;
+                if ((budget - usingBudget) / 1000 < 1)
+                {
+                    cout << "There is no bugdet to add refugee to camp. Add new employee or stop adding refugees" << endl;
+                    break;
+                }
                 Refugee refugee(person);
+                cout << "Remaining refugee capacity: " << int((budget - usingBudget) / 1000) << endl;
                 refugee.setCamp();
                 myArray.addRefugee(refugee);
                 refugee.addRefugeeFile();
+                usingBudget += 1000;
             }
             else if (control = -2)
             {
                 cout << "Person's age is too old for working our country" << endl;
+                if ((budget - usingBudget) / 1000 < 1)
+                {
+                    cout << "There is no bugdet to add refugee to camp. Add new employee or stop adding refugees" << endl;
+                    break;
+                }
                 Refugee refugee(person);
+                cout << "Remaining refugee capacity: " << int((budget - usingBudget) / 1000) << endl;
                 refugee.setCamp();
                 myArray.addRefugee(refugee);
                 refugee.addRefugeeFile();
+                usingBudget += 1000;
             }
             else if (control == -3)
             {
                 cout << "Person point: " << person.getPoint() << ", "
                      << "Person's point is too low for working our country" << endl;
+                if ((budget - usingBudget) / 1000 < 1)
+                {
+                    cout << "There is no bugdet to add refugee to camp. Add new employee or stop adding refugees" << endl;
+                }
                 Refugee refugee(person);
+                cout << "Remaining refugee capacity: " << int((budget - usingBudget) / 1000) << endl;
                 refugee.setCamp();
                 myArray.addRefugee(refugee);
                 refugee.addRefugeeFile();
+                usingBudget += 1000;
             }
         }
         else if (choice == 2)
@@ -102,4 +130,10 @@ int main()
 
         choice = displayMenu();
     }
+
+    ofstream myFile3;
+    myFile3.open("budget.txt", ios::out);
+    myFile3 << budget << endl;
+    myFile3 << usingBudget;
+    myFile3.close();
 }

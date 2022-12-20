@@ -8,7 +8,6 @@
 using namespace std;
 
 int displayMenu();
-int dataSize(string fileName, ifstream &myFile);
-void calculateBudget();
+int calculateDataSize(string fileName, ifstream &myFile);
 
 #endif

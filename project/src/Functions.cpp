@@ -26,7 +26,7 @@ int displayMenu() // displays menu in main
     return selection;
 }
 
-int dataSize(string fileName, ifstream &myFile) // returns person number (line number) in data.txt
+int calculateDataSize(string fileName, ifstream &myFile) // returns person number (line number) in data.txt
 {
     string tempLine;
     int n{0};

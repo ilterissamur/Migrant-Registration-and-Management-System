@@ -17,6 +17,7 @@ protected:
     double personPoint;
 
 public:
+    Person();
     void createPerson();
     void createID();
     int filter(Person p);
@@ -26,7 +27,6 @@ public:
     string getNationallity();
     string getGender();
     string getID();
-    Person();
     double getPoint();
 };
 

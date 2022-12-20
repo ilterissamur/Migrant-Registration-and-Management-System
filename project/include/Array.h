@@ -17,10 +17,13 @@ public:
     Employee *employeeArray{nullptr};
 
     Array(int numberOfRefugee, int numberOfEmployee);
+    ~Array();
     void readArrayData();
-    void addRefugee(Refugee &newRefugee);
     void addEmployee(Employee &newEmployee);
+    void addRefugee(Refugee &newRefugee);
     void calculateBudget();
+    void displayEmployees();
+    void displayRefugees();
 };
 
 #endif

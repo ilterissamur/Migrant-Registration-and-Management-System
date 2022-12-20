@@ -1,5 +1,33 @@
 #include "Employee.h"
 
+Employee::Employee()
+{
+}
+
+Employee::Employee(Person &source)
+{
+    name = source.getName();
+    surname = source.getSurname();
+    age = source.getAge();
+    nationallity = source.getNationallity();
+    gender = source.getGender();
+    id = source.getID();
+}
+
+void Employee::setEmployeeData(string id, string name, string surname, int age, string nationallity, string gender, string job, string city, int salary, int tax)
+{
+    this->id = id;
+    this->name = name;
+    this->surname = surname;
+    this->age = age;
+    this->nationallity = nationallity;
+    this->gender = gender;
+    this->job = job;
+    this->city = city;
+    this->salary = salary;
+    this->tax = tax;
+}
+
 void Employee::findJob(string grade)
 {
     int option, j = 0;
@@ -200,39 +228,27 @@ void Employee::addEmployeeFile()
     ofstream myFile;
     myFile.open("employee.txt", ios::app);
 
-    myFile << id << " " << name << " " << surname << " " << age << " " << nationallity << " " << gender << " " << job << " " << city << " " << salary << endl;
+    myFile << id << " " << name << " " << surname << " " << age << " " << nationallity << " " << gender << " " << job << " " << city << " " << salary << " " << tax << endl;
 
     myFile.close();
-}
-
-void Employee::setEmployeeData(string id, string name, string surname, int age, string nationallity, string gender, string job, string city, int salary)
-{
-    this->id = id;
-    this->name = name;
-    this->surname = surname;
-    this->age = age;
-    this->nationallity = nationallity;
-    this->gender = gender;
-    this->job = job;
-    this->city = city;
-    this->salary = salary;
-}
-
-Employee::Employee(Person &source)
-{
-    name = source.getName();
-    surname = source.getSurname();
-    age = source.getAge();
-    nationallity = source.getNationallity();
-    gender = source.getGender();
-    id = source.getID();
-}
-
-Employee::Employee()
-{
 }
 
 double Employee::getTax()
 {
     return tax;
+}
+
+string Employee::getJob()
+{
+    return job;
+}
+
+string Employee::getCity()
+{
+    return city;
+}
+
+int Employee::getSalary()
+{
+    return salary;
 }

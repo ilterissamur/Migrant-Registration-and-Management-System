@@ -14,6 +14,17 @@ Refugee::Refugee(Person &source)
     id = source.getID();
 }
 
+void Refugee::setRefugeeData(string id, string name, string surname, int age, string nationallity, string gender, string camp)
+{
+    this->id = id;
+    this->name = name;
+    this->surname = surname;
+    this->age = age;
+    this->nationallity = nationallity;
+    this->gender = gender;
+    this->camp = camp;
+}
+
 void Refugee::setCamp()
 {
     ifstream myFile1, myFile2;
@@ -54,13 +65,7 @@ void Refugee::addRefugeeFile()
     myFile.close();
 }
 
-void Refugee::setRefugeeData(string tempID, string tempName, string tempSurname, int tempAge, string tempNationallity, string tempGender, string tempCamp)
+string Refugee::getCamp()
 {
-    this->id = id;
-    this->name = name;
-    this->surname = surname;
-    this->age = age;
-    this->nationallity = nationallity;
-    this->gender = gender;
-    this->camp = camp;
+    return camp;
 }
