@@ -1,11 +1,15 @@
-array ve kopyalama kontrol edilecek
-
 menü renk seçimi ve ayarlaması yapılacak
 
 terminal temizlemeler eklenecek
 
-main düzenlenecek
-
 data ayarlanacak
 
 guilty class yazılacak
+
+display yazılacak
+
+yorum satırı yazılacak
+
+UML diagram yapılacak
+
+rapor hazırlanacak
