@@ -1,13 +1,13 @@
 #include "Array.h"
 
-Array::Array(int numberOfRefugee, int numberOfEmployee)
+Array::Array(int numberOfEmployee, int numberOfRefugee)
 {
-    refugeeSize = numberOfRefugee;
     employeeSize = numberOfEmployee;
-    refugeeArraySize = numberOfRefugee + 10;
+    refugeeSize = numberOfRefugee;
     employeeArraySize = numberOfEmployee + 10;
-    refugeeArray = new Refugee[refugeeArraySize];
+    refugeeArraySize = numberOfRefugee + 10;
     employeeArray = new Employee[employeeArraySize];
+    refugeeArray = new Refugee[refugeeArraySize];
 }
 
 void Array::readArrayData()

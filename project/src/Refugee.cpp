@@ -10,11 +10,11 @@ Refugee::Refugee(Person &source)
     surname = source.getSurname();
     age = source.getAge();
     nationallity = source.getNationallity();
-    gender = source.getNationallity();
+    gender = source.getGender();
     id = source.getID();
 }
 
-int Refugee::setCamp()
+void Refugee::setCamp()
 {
     ifstream myFile1, myFile2;
     myFile1.open("camp.txt", ios::in);

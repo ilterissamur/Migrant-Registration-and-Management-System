@@ -1,4 +1,5 @@
 #include "Functions.h"
+#include "Color.h"
 
 int displayMenu() // displays menu in main
 {

@@ -14,7 +14,7 @@ class Person
 protected:
     string id, name, surname, nationallity, gender;
     int age, iqPoint, mentalPoint, healthPoint, acculturationPoint;
-    float personPoint;
+    double personPoint;
 
 public:
     void createPerson();
@@ -27,6 +27,7 @@ public:
     string getGender();
     string getID();
     Person();
+    double getPoint();
 };
 
 #endif

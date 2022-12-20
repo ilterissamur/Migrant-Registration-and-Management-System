@@ -224,7 +224,7 @@ Employee::Employee(Person &source)
     surname = source.getSurname();
     age = source.getAge();
     nationallity = source.getNationallity();
-    gender = source.getNationallity();
+    gender = source.getGender();
     id = source.getID();
 }
 

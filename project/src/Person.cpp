@@ -6,15 +6,15 @@ Person::Person()
 
 void Person::createPerson() // takes new person from user
 {
-    cout << "Enter name: ";
+    cout << "\nEnter name: ";
     cin >> name;
-    cout << "Enter surname: ";
+    cout << "\nEnter surname: ";
     cin >> surname;
-    cout << "Enter age: ";
+    cout << "\nEnter age: ";
     cin >> age;
-    cout << "Enter nationallity: ";
+    cout << "\nEnter nationallity: ";
     cin >> nationallity;
-    cout << "Enter gender: ";
+    cout << "\nEnter gender: ";
     cin >> gender;
 
     createID();
@@ -38,7 +38,11 @@ int Person::filter(Person p) // filters person is refugee or employee (BAKILACAK
 {
     if (p.getAge() < 18)
     {
-        return 0;
+        return -1;
+    }
+    else if (p.getAge() > 59)
+    {
+        return -2;
     }
     else if (17 < p.getAge() && p.getAge() < 60)
     {
@@ -77,10 +81,6 @@ int Person::filter(Person p) // filters person is refugee or employee (BAKILACAK
             cin >> healthPoint;
         }
     }
-    else if (p.getAge() > 59)
-    {
-        return -2;
-    }
 
     personPoint = float(mentalPoint + acculturationPoint + healthPoint + iqPoint) / 4;
 
@@ -98,7 +98,7 @@ int Person::filter(Person p) // filters person is refugee or employee (BAKILACAK
     }
     else
     {
-        return -1;
+        return -3;
     }
 }
 
@@ -130,4 +130,9 @@ string Person::getGender()
 string Person::getID()
 {
     return id;
+}
+
+double Person::getPoint()
+{
+    return personPoint;
 }
