@@ -1,3 +1,6 @@
+#ifndef REFUGEE_H
+#define REFUGEE_H
+
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -18,3 +21,5 @@ public:
     void addRefugeeFile();
     string getCamp();
 };
+
+#endif

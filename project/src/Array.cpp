@@ -1,29 +1,35 @@
 #include "Array.h"
 
-Array::Array(int numberOfEmployee, int numberOfRefugee)
+Array::Array(int numberOfEmployee, int numberOfRefugee, int numberOfGuilty)
 {
     employeeSize = numberOfEmployee;
     refugeeSize = numberOfRefugee;
-    employeeArraySize = numberOfEmployee + 1;
-    refugeeArraySize = numberOfRefugee + 1;
+    guiltySize = numberOfGuilty;
+    employeeArraySize = numberOfEmployee + 10;
+    refugeeArraySize = numberOfRefugee + 10;
+    guiltyArraySize = numberOfGuilty + 10;
     employeeArray = new Employee[employeeArraySize];
     refugeeArray = new Refugee[refugeeArraySize];
+    guiltyArray = new Guilty[guiltyArraySize];
 }
 
 Array::~Array()
 {
     delete[] employeeArray;
     delete[] refugeeArray;
+    delete[] guiltyArray;
 }
 
 void Array::readArrayData()
 {
     ifstream myFile1;
     ifstream myFile2;
+    ifstream myFile3;
     myFile1.open("employee.txt", ios::in);
     myFile2.open("refugee.txt", ios::in);
+    myFile3.open("guilty.txt", ios::in);
 
-    string tempID, tempName, tempSurname, tempNationallity, tempGender, tempString1, tempString2, tempJob, tempCity, tempCamp;
+    string tempID, tempName, tempSurname, tempNationallity, tempGender, tempString1, tempString2, tempJob, tempCity, tempCamp, tempCrime, tempPunishment;
     int tempAge, tempSalary, tempTax;
 
     for (size_t i = 0; i < employeeSize; i++)
@@ -39,8 +45,15 @@ void Array::readArrayData()
         refugeeArray[i].setRefugeeData(tempID, tempName, tempSurname, tempAge, tempNationallity, tempGender, tempCamp);
     }
 
+    for (size_t i = 0; i < guiltySize; i++)
+    {
+        myFile3 >> tempID >> tempName >> tempSurname >> tempAge >> tempNationallity >> tempGender >> tempCrime >> tempPunishment;
+        guiltyArray[i].setGuiltyData(tempID, tempName, tempSurname, tempAge, tempNationallity, tempGender, tempCrime, tempPunishment);
+    }
+
     myFile1.close();
     myFile2.close();
+    myFile3.close();
 }
 
 void Array::addEmployee(Employee &newEmployee)
@@ -90,6 +103,31 @@ void Array::addRefugee(Refugee &newRefugee)
 
         delete[] refugeeArray;
         refugeeArray = temp;
+    }
+}
+
+void Array::addGuilty(Guilty &newGuilty)
+{
+    if (guiltySize < guiltyArraySize)
+    {
+        guiltyArray[guiltySize] = newGuilty;
+        guiltySize++;
+    }
+    else
+    {
+        guiltyArraySize = guiltyArraySize + 10;
+        Guilty *temp = new Guilty[guiltyArraySize];
+
+        for (size_t i = 0; i < guiltySize; i++)
+        {
+            temp[i] = guiltyArray[i];
+        }
+
+        temp[guiltySize] = newGuilty;
+        guiltySize++;
+
+        delete[] guiltyArray;
+        guiltyArray = temp;
     }
 }
 

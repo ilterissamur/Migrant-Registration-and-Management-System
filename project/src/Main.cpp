@@ -10,14 +10,16 @@ int main()
 {
     srand(time(NULL));
 
-    ifstream myFile1, myFile2;
-    int size1, size2, choice, budget, usingBudget;
+    ifstream myFile1, myFile2, myFile3;
+    int size1, size2, size3, choice, budget, usingBudget;
 
     size1 = calculateDataSize("employee.txt", myFile1) - 1;
     size2 = calculateDataSize("refugee.txt", myFile2) - 1;
-
-    Array myArray(size1, size2);
+    size3 = calculateDataSize("guilty.txt", myFile3) - 1;
+    Array myArray(size1, size2, size3);
     myArray.readArrayData();
+
+    myArray.calculateBudget();
 
     myFile1.open("budget.txt", ios::in);
     myFile1 >> budget;
@@ -131,9 +133,9 @@ int main()
         choice = displayMenu();
     }
 
-    ofstream myFile3;
-    myFile3.open("budget.txt", ios::out);
-    myFile3 << budget << endl;
-    myFile3 << usingBudget;
-    myFile3.close();
+    ofstream myFile4;
+    myFile4.open("budget.txt", ios::out);
+    myFile4 << budget << endl;
+    myFile4 << usingBudget;
+    myFile4.close();
 }

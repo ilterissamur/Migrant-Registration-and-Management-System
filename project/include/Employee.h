@@ -1,3 +1,6 @@
+#ifndef EMPLOYEE_H
+#define EMPLOYEE_H
+
 #include <iostream>
 #include <string>
 #include "Person.h"
@@ -21,3 +24,5 @@ public:
   string getCity();
   int getSalary();
 };
+
+#endif
