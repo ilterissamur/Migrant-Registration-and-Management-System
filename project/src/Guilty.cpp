@@ -4,7 +4,17 @@ Guilty::Guilty()
 {
 }
 
-Guilty::Guilty(Person &source)
+Guilty::Guilty(Employee &source)
+{
+    name = source.getName();
+    surname = source.getSurname();
+    age = source.getAge();
+    nationallity = source.getNationallity();
+    gender = source.getGender();
+    id = source.getID();
+}
+
+Guilty::Guilty(Refugee &source)
 {
     name = source.getName();
     surname = source.getSurname();

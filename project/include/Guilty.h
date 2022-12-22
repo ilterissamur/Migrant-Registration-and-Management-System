@@ -3,7 +3,8 @@
 
 #include <iostream>
 #include <fstream>
-#include "Person.h"
+#include "Employee.h"
+#include "Refugee.h"
 
 using namespace std;
 
@@ -15,7 +16,8 @@ private:
 
 public:
     Guilty();
-    Guilty(Person &source);
+    Guilty(Employee &source);
+    Guilty(Refugee &source);
     void setCrime();
     void setGuiltyData(string id, string name, string surname, int age, string nationallity, string gender, string crime, string punishment);
     void setPunishment();
