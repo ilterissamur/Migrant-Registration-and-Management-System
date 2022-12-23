@@ -27,6 +27,8 @@ public:
     void calculateBudget();
     void displayEmployees();
     void displayRefugees();
+    int getEmployeeSize();
+    int getRefugeeSize();
 };
 
 #endif

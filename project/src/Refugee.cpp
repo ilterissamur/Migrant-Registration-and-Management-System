@@ -14,7 +14,7 @@ Refugee::Refugee(Person &source)
     id = source.getID();
 }
 
-void Refugee::setRefugeeData(string id, string name, string surname, int age, string nationallity, string gender, string camp)
+void Refugee::setRefugeeData(const string &id, const string &name, const string &surname, const int &age, const string &nationallity, const string &gender, const string &camp)
 {
     this->id = id;
     this->name = name;

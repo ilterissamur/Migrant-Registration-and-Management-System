@@ -168,3 +168,13 @@ void Array::displayRefugees()
              << refugeeArray[i].getNationallity() << " " << refugeeArray[i].getGender() << " " << refugeeArray[i].getCamp() << endl;
     }
 }
+
+int Array::getEmployeeSize()
+{
+    return employeeSize;
+}
+
+int Array::getRefugeeSize()
+{
+    return refugeeSize;
+}

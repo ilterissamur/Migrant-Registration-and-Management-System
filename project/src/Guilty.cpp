@@ -28,7 +28,7 @@ void Guilty::setCrime()
 {
 }
 
-void Guilty::setGuiltyData(string id, string name, string surname, int age, string nationallity, string gender, string crime, string punishment)
+void Guilty::setGuiltyData(const string &id, const string &name, const string &surname, const int &age, const string &nationallity, const string &gender, const string &crime, const string &punishment)
 {
     this->id = id;
     this->name = name;
@@ -44,6 +44,32 @@ void Guilty::setPunishment()
 {
 }
 
-void Guilty::makePunsihment()
+void Guilty::applyPunsihment()
 {
+}
+
+int Guilty::search(Employee *array, int size, string id)
+{
+    for (size_t i = 0; i < size; i++)
+    {
+        if (array[i].getID() == id)
+        {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+int Guilty::search(Refugee *array, int size, string id)
+{
+    for (size_t i = 0; i < size; i++)
+    {
+        if (array[i].getID() == id)
+        {
+            return i;
+        }
+    }
+
+    return -1;
 }

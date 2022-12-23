@@ -16,7 +16,7 @@ private:
 public:
   Employee();
   Employee(Person &source);
-  void setEmployeeData(string id, string name, string surname, int age, string nationallity, string gender, string job, string city, int salary, int tax);
+  void setEmployeeData(const string &id, const string &name, const string &surname, const int &age, const string &nationallity, const string &gender, const string &job, const string &city, const int &salary, const int &tax);
   void findJob(string grade);
   void addEmployeeFile();
   double getTax();

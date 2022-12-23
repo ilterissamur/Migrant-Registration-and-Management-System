@@ -19,9 +19,11 @@ public:
     Guilty(Employee &source);
     Guilty(Refugee &source);
     void setCrime();
-    void setGuiltyData(string id, string name, string surname, int age, string nationallity, string gender, string crime, string punishment);
+    void setGuiltyData(const string &id, const string &name, const string &surname, const int &age, const string &nationallity, const string &gender, const string &crime, const string &punishment);
     void setPunishment();
-    void makePunsihment();
+    void applyPunsihment();
+    int search(Employee *array, int size, string id);
+    int search(Refugee *array, int size, string id);
 };
 
 #endif

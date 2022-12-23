@@ -14,7 +14,7 @@ Employee::Employee(Person &source)
     id = source.getID();
 }
 
-void Employee::setEmployeeData(string id, string name, string surname, int age, string nationallity, string gender, string job, string city, int salary, int tax)
+void Employee::setEmployeeData(const string &id, const string &name, const string &surname, const int &age, const string &nationallity, const string &gender, const string &job, const string &city, const int &salary, const int &tax)
 {
     this->id = id;
     this->name = name;

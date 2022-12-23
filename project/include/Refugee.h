@@ -16,7 +16,7 @@ private:
 public:
     Refugee();
     Refugee(Person &source);
-    void setRefugeeData(string tempID, string tempName, string tempSurname, int tempAge, string tempNationallity, string tempGender, string tempCamp);
+    void setRefugeeData(const string &id, const string &name, const string &surname, const int &age, const string &nationallity, const string &gender, const string &camp);
     void setCamp();
     void addRefugeeFile();
     string getCamp();

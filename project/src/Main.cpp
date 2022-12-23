@@ -123,7 +123,29 @@ int main()
         }
         else if (choice == 2)
         {
-            cout << "22222" << endl;
+            int type, index;
+            string tempID;
+
+            cout << "1- Employee" << endl;
+            cout << "2- Refugee" << endl;
+            cout << "Choose migrant type: ";
+            cin >> type;
+
+            cout << "Enter the ID of the guilty: ";
+            cin >> tempID;
+
+            if (type == 1)
+            {
+                Guilty g1;
+                index = g1.search(myArray.employeeArray, myArray.getEmployeeSize(), tempID);
+                Guilty g2(myArray.employeeArray[index]);
+            }
+            else if (type == 2)
+            {
+                Guilty g1;
+                index = g1.search(myArray.refugeeArray, myArray.getRefugeeSize(), tempID);
+                Guilty g2(myArray.refugeeArray[index]);
+            }
         }
         else if (choice == 3)
         {
