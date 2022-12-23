@@ -7,7 +7,7 @@ void Color::printBlack(string sentence)
 
 void Color::printRed(string sentence)
 {
-    cout << "\033[91m" << sentence << endl;
+    cout << "\033[91m" << sentence << "\033[0m" << endl;
 }
 
 void Color::printGreen(string sentence)

@@ -29,6 +29,8 @@ public:
     void displayRefugees();
     int getEmployeeSize();
     int getRefugeeSize();
+    void setEmployeeSize(int newSize);
+    void setRefugeeSize(int newSize);
 };
 
 #endif

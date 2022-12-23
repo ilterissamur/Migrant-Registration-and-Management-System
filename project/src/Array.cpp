@@ -178,3 +178,13 @@ int Array::getRefugeeSize()
 {
     return refugeeSize;
 }
+
+void Array::setEmployeeSize(int newSize)
+{
+    employeeSize = newSize;
+}
+
+void Array::setRefugeeSize(int newSize)
+{
+    refugeeSize = newSize;
+}

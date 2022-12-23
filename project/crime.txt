@@ -1,6 +1,9 @@
 Robbery
-Commit Murder
-Terror Activity
-Drug Dealing
-Distrub Environment
-Fight
+ Kidnapping
+ Commit Murder
+ Terror Activity
+ Drug Dealing
+ Distrub Environment
+ Fight
+ Tax Evasion
+ Money Laundering

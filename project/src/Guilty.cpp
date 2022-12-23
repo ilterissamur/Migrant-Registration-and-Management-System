@@ -24,8 +24,78 @@ Guilty::Guilty(Refugee &source)
     id = source.getID();
 }
 
-void Guilty::setCrime()
+void Guilty::setCrime(int migrantType)
 {
+    ifstream myFile1;
+    ifstream myFile2;
+
+    myFile1.open("crime.txt", ios::in);
+    myFile2.open("crime.txt", ios::in);
+
+    string tempString1, tempString2;
+    int j = 0, option;
+
+    if (migrantType == 1)
+    {
+        for (size_t i = 0; i < 9; i++)
+        {
+            getline(myFile1, tempString1);
+            cout << ++j << "- " << tempString1 << endl;
+            myFile1.ignore();
+            tempString1.clear();
+        }
+
+        myFile1.close();
+
+        cout << "Choose crime: ";
+        cin >> option;
+
+        while (option < 1 || option > 9)
+        {
+            cout << "You entered invalid choice!! Please again enter your choose: ";
+            cin >> option;
+        }
+
+        for (size_t i = 0; i < option; i++)
+        {
+            getline(myFile2, tempString2);
+            tempString2.clear();
+            myFile2.ignore();
+        }
+
+        myFile2.close();
+
+        cout << crime;
+        crime = tempString2;
+    }
+    else
+    {
+        for (size_t i = 0; i < 7; i++)
+        {
+            getline(myFile1, tempString1);
+            cout << ++j << "- " << tempString1 << endl;
+            myFile1.ignore();
+            tempString1.clear();
+        }
+
+        cout << "Choose crime: ";
+        cin >> option;
+
+        while (option < 1 || option > 7)
+        {
+            cout << "You entered invalid choice!! Please again enter your choose: ";
+            cin >> option;
+        }
+    }
+
+    for (size_t i = 0; i < option; i++)
+    {
+        getline(myFile2, tempString2);
+        myFile2.ignore();
+    }
+
+    crime = tempString2;
+    cout << crime;
 }
 
 void Guilty::setGuiltyData(const string &id, const string &name, const string &surname, const int &age, const string &nationallity, const string &gender, const string &crime, const string &punishment)
@@ -40,12 +110,98 @@ void Guilty::setGuiltyData(const string &id, const string &name, const string &s
     this->punishment = punishment;
 }
 
-void Guilty::setPunishment()
+void Guilty::setPunishment(int migrantType)
 {
+    if ((migrantType == 1) && (crime == "Robbery" || crime == "Fight" || crime == "Tax Evasion" || crime == "Money Laundering"))
+    {
+        punishment = "Deport";
+
+        if (crime == "Tax Evasion" || crime == "Money Laundering")
+        {
+            punishment = "Deport + Penalty";
+        }
+    }
+    else if ((migrantType == 1) && (crime == "Kidnapping" || crime == "Commit Murder" || crime == "Terror Activity" || crime == "Drug Dealing"))
+    {
+        punishment = "Arrest";
+    }
+    else if ((migrantType == 1))
+    {
+        punishment == "Penalty";
+    }
+
+    if ((migrantType == 2) && (crime == "Kidnapping" || crime == "Commit Murder" || crime == "Terror Activity" || crime == "Drug Dealing" || crime == "Distrub Environment"))
+    {
+        punishment == "Arrest";
+    }
+    else if (migrantType == 2)
+    {
+        punishment == "Deport";
+    }
 }
 
-void Guilty::applyPunsihment()
+void Guilty::applyPunsihment(int migrantType, int &budget, int &usingBudget, Employee *employeeArray, Refugee *refugeeArray, int &employeeSize, int &refugeeSize, int index)
 {
+    ofstream myFile1;
+
+    if (punishment == "Deport" || punishment == "Arrest")
+    {
+        if (migrantType == 1)
+        {
+            budget -= employeeArray[index].getTax();
+
+            if (punishment == "Deport + Penalty")
+            {
+                budget += 50000;
+            }
+
+            for (size_t i = index; i < employeeSize - 1; i++)
+            {
+                employeeArray[i] = employeeArray[i + 1];
+            }
+            employeeSize--;
+
+            myFile1.open("employee.txt", ios::out);
+
+            for (size_t i = 0; i < employeeSize; i++)
+            {
+                myFile1 << employeeArray[i].getID() << " " << employeeArray[i].getName() << " " << employeeArray[i].getSurname() << " " << employeeArray[i].getAge()
+                        << " " << employeeArray[i].getNationallity() << " " << employeeArray[i].getGender() << " " << employeeArray[i].getJob()
+                        << " " << employeeArray[i].getCity() << " " << employeeArray[i].getSalary() << " " << employeeArray[i].getTax() << endl;
+            }
+
+            myFile1.close();
+
+            // budget değişecek + +
+            // arrayden silinecek + +
+            // txtye yazdırılcak + +
+            // employeeSize değişecek + +
+        }
+        else if (migrantType == 2)
+        {
+            usingBudget -= 1000;
+
+            for (size_t i = index; i < refugeeSize - 1; i++)
+            {
+                refugeeArray[i] = refugeeArray[i + 1];
+            }
+            refugeeSize--;
+
+            myFile1.open("refugee.txt", ios::out);
+
+            for (size_t i = 0; i < refugeeSize; i++)
+            {
+                myFile1 << refugeeArray[i].getID() << " " << refugeeArray[i].getName() << " " << refugeeArray[i].getSurname() << " " << refugeeArray[i].getAge()
+                        << " " << refugeeArray[i].getNationallity() << " " << refugeeArray[i].getGender() << " " << refugeeArray[i].getCamp() << endl;
+            }
+
+            myFile1.close();
+        }
+    }
+    else
+    {
+        budget += 15000;
+    }
 }
 
 int Guilty::search(Employee *array, int size, string id)
@@ -72,4 +228,15 @@ int Guilty::search(Refugee *array, int size, string id)
     }
 
     return -1;
+}
+
+void Guilty::addGuiltyFile()
+{
+    ofstream myFile;
+    myFile.open("guilty.txt", ios::app);
+
+    myFile << id << " " << name << " " << surname << " " << age << " " << nationallity << " " << gender << " "
+           << " " << crime << " " << punishment << endl;
+
+    myFile.close();
 }

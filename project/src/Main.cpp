@@ -125,6 +125,8 @@ int main()
         {
             int type, index;
             string tempID;
+            int employeeSize = myArray.getEmployeeSize();
+            int refugeeSize = myArray.getRefugeeSize();
 
             cout << "1- Employee" << endl;
             cout << "2- Refugee" << endl;
@@ -139,13 +141,24 @@ int main()
                 Guilty g1;
                 index = g1.search(myArray.employeeArray, myArray.getEmployeeSize(), tempID);
                 Guilty g2(myArray.employeeArray[index]);
+                g2.setCrime(type);
+                g2.setPunishment(type);
+                g2.applyPunsihment(type, budget, usingBudget, myArray.employeeArray, myArray.refugeeArray, employeeSize, refugeeSize, index);
+                g2.addGuiltyFile();
             }
             else if (type == 2)
             {
                 Guilty g1;
                 index = g1.search(myArray.refugeeArray, myArray.getRefugeeSize(), tempID);
                 Guilty g2(myArray.refugeeArray[index]);
+                g2.setCrime(type);
+                g2.setPunishment(type);
+                g2.applyPunsihment(type, budget, usingBudget, myArray.employeeArray, myArray.refugeeArray, employeeSize, refugeeSize, index);
+                g2.addGuiltyFile();
             }
+
+            myArray.setEmployeeSize(employeeSize);
+            myArray.setRefugeeSize(refugeeSize);
         }
         else if (choice == 3)
         {
