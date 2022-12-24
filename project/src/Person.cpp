@@ -6,7 +6,7 @@ Person::Person()
 
 void Person::createPerson() // takes new person from user
 {
-    cout << "\nEnter name: ";
+    cout << "Enter name: ";
     cin >> name;
     cout << "\nEnter surname: ";
     cin >> surname;
@@ -48,7 +48,7 @@ int Person::filter(Person p) // filters person is refugee or employee (BAKILACAK
     {
         cout << "\nPlease input person's iq test point:";
         cin >> iqPoint;
-        while (iqPoint <= 0 || iqPoint > 100)
+        while (iqPoint <= 0 || iqPoint > 180)
         {
             cout << "\nInvalid value for iq point! Please enter new iq point:";
             cin >> iqPoint;
@@ -135,4 +135,34 @@ string Person::getID()
 double Person::getPoint()
 {
     return personPoint;
+}
+
+void Person::setName(string name)
+{
+    this->name = name;
+}
+
+void Person::setSurname(string surname)
+{
+    this->surname = surname;
+}
+
+void Person::setAge(int age)
+{
+    this->age = age;
+}
+
+void Person::setNationallity(string nationallity)
+{
+    this->nationallity = nationallity;
+}
+
+void Person::setGender(string gender)
+{
+    this->gender = gender;
+}
+
+void Person::setID(string id)
+{
+    this->id = id;
 }

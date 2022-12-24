@@ -26,6 +26,7 @@ Guilty::Guilty(Refugee &source)
 
 void Guilty::setCrime(int migrantType)
 {
+    /*
     ifstream myFile1;
     ifstream myFile2;
 
@@ -37,6 +38,7 @@ void Guilty::setCrime(int migrantType)
 
     if (migrantType == 1)
     {
+
         for (size_t i = 0; i < 9; i++)
         {
             getline(myFile1, tempString1);
@@ -96,6 +98,74 @@ void Guilty::setCrime(int migrantType)
 
     crime = tempString2;
     cout << crime;
+    */
+
+    int option, j = 0;
+
+    cout << ++j << "- Making Robbery" << endl;
+    cout << ++j << "- Commit Murder" << endl;
+    cout << ++j << "- Terror Activity" << endl;
+    cout << ++j << "- Drug Dealing" << endl;
+    cout << ++j << "- Disturb Environment" << endl;
+    cout << ++j << "- Injured Fight" << endl;
+    if (migrantType == 1)
+    {
+        cout << ++j << "- Tax Evasion" << endl;
+        cout << ++j << "- Money Laundering" << endl;
+
+        cout << "Choose crime type: ";
+        cin >> option;
+
+        while (option < 1 || option > 8)
+        {
+            cout << "You entered invalid choice!! Please again enter your choose: ";
+            cin >> option;
+        }
+    }
+    else
+    {
+        cout << "Choose crime type: ";
+        cin >> option;
+
+        while (option < 1 || option > 6)
+        {
+            cout << "You entered invalid choice!! Please again enter your choose: ";
+            cin >> option;
+        }
+    }
+
+    if (option == 1)
+    {
+        crime = "Making Robbery";
+    }
+    else if (option == 2)
+    {
+        crime = "Commit Murder";
+    }
+    else if (option == 3)
+    {
+        crime = "Terror Activity";
+    }
+    else if (option == 4)
+    {
+        crime = "Drug Dealing";
+    }
+    else if (option == 5)
+    {
+        crime = "Disturb Environment";
+    }
+    else if (option == 6)
+    {
+        crime = "Injured Fight";
+    }
+    else if (option == 7)
+    {
+        crime = "Tax Evasion";
+    }
+    else if (option == 8)
+    {
+        crime = "Money Laundering";
+    }
 }
 
 void Guilty::setGuiltyData(const string &id, const string &name, const string &surname, const int &age, const string &nationallity, const string &gender, const string &crime, const string &punishment)
@@ -112,31 +182,36 @@ void Guilty::setGuiltyData(const string &id, const string &name, const string &s
 
 void Guilty::setPunishment(int migrantType)
 {
-    if ((migrantType == 1) && (crime == "Robbery" || crime == "Fight" || crime == "Tax Evasion" || crime == "Money Laundering"))
+    if (migrantType == 1)
     {
-        punishment = "Deport";
-
-        if (crime == "Tax Evasion" || crime == "Money Laundering")
+        if (crime == "Making Robbery" || crime == "Injured Fight" || crime == "Tax Evasion" || crime == "Money Laundering")
         {
-            punishment = "Deport + Penalty";
+            punishment = "Deport";
+
+            if (crime == "Tax Evasion" || crime == "Money Laundering")
+            {
+                punishment = "Deport+Penalty";
+            }
+        }
+        else if (crime == "Commit Murder" || crime == "Terror Activity" || crime == "Drug Dealing")
+        {
+            punishment = "Arrest";
+        }
+        else
+        {
+            punishment = "Penalty";
         }
     }
-    else if ((migrantType == 1) && (crime == "Kidnapping" || crime == "Commit Murder" || crime == "Terror Activity" || crime == "Drug Dealing"))
+    else
     {
-        punishment = "Arrest";
-    }
-    else if ((migrantType == 1))
-    {
-        punishment == "Penalty";
-    }
-
-    if ((migrantType == 2) && (crime == "Kidnapping" || crime == "Commit Murder" || crime == "Terror Activity" || crime == "Drug Dealing" || crime == "Distrub Environment"))
-    {
-        punishment == "Arrest";
-    }
-    else if (migrantType == 2)
-    {
-        punishment == "Deport";
+        if (crime == "Commit Murder" || crime == "Terror Activity" || crime == "Drug Dealing" || crime == "Disturb Environment")
+        {
+            punishment = "Arrest";
+        }
+        else
+        {
+            punishment = "Deport";
+        }
     }
 }
 
@@ -144,13 +219,13 @@ void Guilty::applyPunsihment(int migrantType, int &budget, int &usingBudget, Emp
 {
     ofstream myFile1;
 
-    if (punishment == "Deport" || punishment == "Arrest")
+    if (punishment == "Deport" || punishment == "Arrest" || punishment == "Deport+Penalty")
     {
         if (migrantType == 1)
         {
             budget -= employeeArray[index].getTax();
 
-            if (punishment == "Deport + Penalty")
+            if (punishment == "Deport+Penalty")
             {
                 budget += 50000;
             }
@@ -171,11 +246,6 @@ void Guilty::applyPunsihment(int migrantType, int &budget, int &usingBudget, Emp
             }
 
             myFile1.close();
-
-            // budget değişecek + +
-            // arrayden silinecek + +
-            // txtye yazdırılcak + +
-            // employeeSize değişecek + +
         }
         else if (migrantType == 2)
         {
@@ -235,8 +305,7 @@ void Guilty::addGuiltyFile()
     ofstream myFile;
     myFile.open("guilty.txt", ios::app);
 
-    myFile << id << " " << name << " " << surname << " " << age << " " << nationallity << " " << gender << " "
-           << " " << crime << " " << punishment << endl;
+    myFile << id << " " << name << " " << surname << " " << age << " " << nationallity << " " << gender << " " << crime << " " << punishment << endl;
 
     myFile.close();
 }

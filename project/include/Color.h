@@ -1,3 +1,6 @@
+#ifndef COLOR_H
+#define COLOR_H
+
 #include <iostream>
 
 using namespace std;
@@ -12,3 +15,5 @@ public:
     void printBlue(string sentence);
     void printMagenta(string sentence);
 };
+
+#endif

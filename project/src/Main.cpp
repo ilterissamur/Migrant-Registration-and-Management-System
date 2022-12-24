@@ -19,8 +19,6 @@ int main()
     Array myArray(size1, size2, size3);
     myArray.readArrayData();
 
-    myArray.calculateBudget();
-
     myFile1.open("budget.txt", ios::in);
     myFile1 >> budget;
     myFile1 >> usingBudget;
@@ -35,19 +33,25 @@ int main()
         cout << "Invalid login, please login again" << endl;
     }
 
+    system("cls");
+
     choice = displayMenu();
 
     while (choice != 4)
     {
         if (choice == 1)
         {
+            system("cls");
+
             person.createPerson();
 
             int control = person.filter(person);
 
             if (control == 3)
             {
-                cout << "Person point: " << person.getPoint() << ", "
+                system("cls");
+
+                cout << "\nPerson point: " << person.getPoint() << ", "
                      << "Person takes A grade from job classification" << endl;
                 Employee employee(person);
                 employee.findJob("A");
@@ -57,7 +61,9 @@ int main()
             }
             else if (control == 2)
             {
-                cout << "Person point: " << person.getPoint() << ", "
+                system("cls");
+
+                cout << "\nPerson point: " << person.getPoint() << ", "
                      << "Person takes B grade from job classification" << endl;
                 Employee employee(person);
                 employee.findJob("B");
@@ -67,7 +73,9 @@ int main()
             }
             else if (control == 1)
             {
-                cout << "Person point: " << person.getPoint() << ", "
+                system("cls");
+
+                cout << "\nPerson point: " << person.getPoint() << ", "
                      << "Person takes C grade from job classification" << endl;
                 Employee employee(person);
                 employee.findJob("C");
@@ -77,14 +85,14 @@ int main()
             }
             else if (control == -1)
             {
-                cout << "Person's age is too young for working our country" << endl;
+                cout << "\nPerson's age is too young for working our country" << endl;
                 if ((budget - usingBudget) / 1000 < 1)
                 {
-                    cout << "There is no bugdet to add refugee to camp. Add new employee or stop adding refugees" << endl;
+                    cout << "WARNING: There is no bugdet to add refugee to camp. Add new employee or stop adding refugees" << endl;
                     break;
                 }
                 Refugee refugee(person);
-                cout << "Remaining refugee capacity: " << int((budget - usingBudget) / 1000) << endl;
+                cout << "\nRemaining refugee capacity: " << int((budget - usingBudget) / 1000) << endl;
                 refugee.setCamp();
                 myArray.addRefugee(refugee);
                 refugee.addRefugeeFile();
@@ -92,7 +100,7 @@ int main()
             }
             else if (control = -2)
             {
-                cout << "Person's age is too old for working our country" << endl;
+                cout << "\nPerson's age is too old for working our country" << endl;
                 if ((budget - usingBudget) / 1000 < 1)
                 {
                     cout << "There is no bugdet to add refugee to camp. Add new employee or stop adding refugees" << endl;

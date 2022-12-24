@@ -158,7 +158,7 @@ void Employee::findJob(string grade)
     }
     else if (grade == "C")
     {
-        salary = 5000;
+        salary = 7500;
         tax = salary * 0.1;
 
         j = 0;

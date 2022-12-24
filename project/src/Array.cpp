@@ -47,7 +47,8 @@ void Array::readArrayData()
 
     for (size_t i = 0; i < guiltySize; i++)
     {
-        myFile3 >> tempID >> tempName >> tempSurname >> tempAge >> tempNationallity >> tempGender >> tempCrime >> tempPunishment;
+        myFile3 >> tempID >> tempName >> tempSurname >> tempAge >> tempNationallity >> tempGender >> tempString1 >> tempString2 >> tempPunishment;
+        tempCrime = tempString1 + " " + tempString2;
         guiltyArray[i].setGuiltyData(tempID, tempName, tempSurname, tempAge, tempNationallity, tempGender, tempCrime, tempPunishment);
     }
 
