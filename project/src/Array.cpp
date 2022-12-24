@@ -189,3 +189,69 @@ void Array::setRefugeeSize(int newSize)
 {
     refugeeSize = newSize;
 }
+
+ostream &operator<<(ostream &printEmployee, Employee &e)
+{
+    printEmployee << setw(20) << left << e.getID() << setw(20) << left << e.getName() << setw(20) << left << e.getSurname()
+                  << setw(20) << left << e.getAge() << setw(20) << left << e.getNationallity() << setw(20) << left << e.getGender()
+                  << setw(20) << left << e.getJob() << setw(20) << left << e.getCity() << setw(20) << left << e.getSalary()
+                  << setw(20) << left << e.getTax() << endl;
+
+    return printEmployee;
+}
+
+ostream &operator<<(ostream &printRefugee, Refugee &r)
+{
+    printRefugee << setw(20) << left << r.getID() << setw(20) << left << r.getName() << setw(20) << left << r.getSurname()
+                 << setw(20) << left << r.getAge() << setw(20) << left << r.getNationallity() << setw(20) << left << r.getGender()
+                 << setw(20) << left << r.getCamp() << endl;
+
+    return printRefugee;
+}
+
+ostream &operator<<(ostream &printGuilty, Guilty &g)
+{
+    printGuilty << setw(20) << left << g.getID() << setw(20) << left << g.getName() << setw(20) << left << g.getSurname()
+                << setw(20) << left << g.getAge() << setw(20) << left << g.getNationallity() << setw(20) << left << g.getGender()
+                << setw(20) << left << g.getCrime() << setw(20) << left << g.getPunishment() << endl;
+
+    return printGuilty;
+}
+
+void Array::print(string mode)
+{
+    if (mode == "Employee")
+    {
+        cout << setw(20) << left << "ID" << setw(20) << left << "Name" << setw(20) << left << "Surname" << setw(20) << left << "Age"
+             << setw(20) << left << "Nationallity" << setw(20) << left << "Gender" << setw(20) << left << "Job" << setw(20) << left << "City"
+             << setw(20) << left << "Salary" << setw(20) << left << "Tax" << endl;
+        cout << "\n";
+
+        for (size_t i = 0; i < employeeSize; i++)
+        {
+            cout << employeeArray[i] << endl;
+        }
+    }
+    else if (mode == "Refugee")
+    {
+        cout << setw(20) << left << "ID" << setw(20) << left << "Name" << setw(20) << left << "Surname" << setw(20) << left << "Age"
+             << setw(20) << left << "Nationallity" << setw(20) << left << "Gender" << setw(20) << left << "Camp" << endl;
+        cout << "\n";
+
+        for (size_t i = 0; i < refugeeSize; i++)
+        {
+            cout << refugeeArray[i];
+        }
+    }
+    else
+    {
+        cout << setw(20) << left << "ID" << setw(20) << left << "Name" << setw(20) << left << "Surname" << setw(20) << left << "Age"
+             << setw(20) << left << "Nationallity" << setw(20) << left << "Gender" << setw(20) << left << "Crime" << setw(20) << left << "Punishment" << endl;
+        cout << "\n";
+
+        for (size_t i = 0; i < guiltySize; i++)
+        {
+            cout << guiltyArray[i];
+        }
+    }
+}

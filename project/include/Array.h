@@ -2,6 +2,7 @@
 #define ARRAY_H
 
 #include <iostream>
+#include <iomanip>
 #include <fstream>
 #include "Person.h"
 #include "Employee.h"
@@ -31,6 +32,8 @@ public:
     int getRefugeeSize();
     void setEmployeeSize(int newSize);
     void setRefugeeSize(int newSize);
+    void print(string mode);
+    friend ostream &operator<<(ostream &printEmployee, Employee &e);
 };
 
 #endif

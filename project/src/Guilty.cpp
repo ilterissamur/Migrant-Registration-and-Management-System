@@ -309,3 +309,13 @@ void Guilty::addGuiltyFile()
 
     myFile.close();
 }
+
+string Guilty::getCrime()
+{
+    return crime;
+}
+
+string Guilty::getPunishment()
+{
+    return punishment;
+}

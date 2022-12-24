@@ -25,11 +25,11 @@ int main()
     myFile1.close();
 
     Person person;
-    Color color;
     Admin admin;
 
     while (!admin.login())
     {
+        system("cls");
         cout << "Invalid login, please login again" << endl;
     }
 
@@ -152,6 +152,7 @@ int main()
                 g2.setCrime(type);
                 g2.setPunishment(type);
                 g2.applyPunsihment(type, budget, usingBudget, myArray.employeeArray, myArray.refugeeArray, employeeSize, refugeeSize, index);
+                myArray.addGuilty(g2);
                 g2.addGuiltyFile();
             }
             else if (type == 2)
@@ -162,6 +163,7 @@ int main()
                 g2.setCrime(type);
                 g2.setPunishment(type);
                 g2.applyPunsihment(type, budget, usingBudget, myArray.employeeArray, myArray.refugeeArray, employeeSize, refugeeSize, index);
+                myArray.addGuilty(g2);
                 g2.addGuiltyFile();
             }
 
@@ -170,7 +172,31 @@ int main()
         }
         else if (choice == 3)
         {
-            cout << "33333" << endl;
+            int selection;
+
+            cout << "1- Display Employees" << endl;
+            cout << "2- Display Refugees" << endl;
+            cout << "3- Display Guilties" << endl;
+            cout << "Choose Display Mode: ";
+            cin >> selection;
+            while (selection < 1 || selection > 3)
+            {
+                cout << "Invalid choice, please choose again:";
+                cin >> selection;
+            }
+
+            if (selection == 1)
+            {
+                myArray.print("Employee");
+            }
+            else if (selection == 2)
+            {
+                myArray.print("Refugee");
+            }
+            else
+            {
+                myArray.print("Guilty");
+            }
         }
 
         choice = displayMenu();

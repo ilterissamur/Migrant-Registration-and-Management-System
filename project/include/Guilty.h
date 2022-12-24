@@ -24,6 +24,8 @@ public:
     int search(Employee *array, int size, string id);
     int search(Refugee *array, int size, string id);
     void addGuiltyFile();
+    string getCrime();
+    string getPunishment();
 };
 
 #endif

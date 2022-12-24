@@ -1,9 +1,8 @@
 65598844 Ahmed Wahbi 78 Arabia Male Gaziantep
 77312398 Ahmed Nader 13 Iraq Male Kilis
-13914869 Ali Salmin 27 Arabia Male Kilis
 16418631 Maryam Afif 82 Iran Female Bitlis
 62348753 Noor Husin 2 Afghanistan Male Gaziantep
-23678579 Sharif Mukhammad 17 Syria Male Bitlis
+32476513 Sharif Mukhammad 17 Syria Male Bitlis
 23764582 Ibrahim Hatemi 3 Iran Male Kilis
-93567985 Abdollah Shafieezadeh 94 Syria Male Kilis
 25694632 Djamila Saad 8 Iraq Female Bitlis
+93567985 Abdollah Shafieezadeh 94 Syria Male Kilis
