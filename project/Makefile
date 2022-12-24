@@ -1,7 +1,7 @@
 compilerun:program run
 
 program:functions main admin person employee refugee guilty array color
-	g++ ./obj/Functions.o ./obj/Main.o ./obj/Admin.o ./obj/Person.o ./obj/Employee.o ./obj/Refugee.o ./obj/Guilty.o ./obj/Array.o ./obj/Color.o -o ./bin/program
+	g++ ./obj/Functions.o ./obj/Main.o ./obj/Admin.o ./obj/Person.o ./obj/Employee.o ./obj/Refugee.o ./obj/Guilty.o ./obj/Array.o ./obj/Color.o -o program
 functions:
 	g++ -I "./include" -c ./src/Functions.cpp -o ./obj/Functions.o
 main:
@@ -21,4 +21,4 @@ array:
 color:
 	g++ -I "./include" -c ./src/Color.cpp -o ./obj/Color.o
 run:
-	./bin/program.exe
+	program.exe
