@@ -136,33 +136,3 @@ double Person::getPoint()
 {
     return personPoint;
 }
-
-void Person::setName(string name)
-{
-    this->name = name;
-}
-
-void Person::setSurname(string surname)
-{
-    this->surname = surname;
-}
-
-void Person::setAge(int age)
-{
-    this->age = age;
-}
-
-void Person::setNationallity(string nationallity)
-{
-    this->nationallity = nationallity;
-}
-
-void Person::setGender(string gender)
-{
-    this->gender = gender;
-}
-
-void Person::setID(string id)
-{
-    this->id = id;
-}

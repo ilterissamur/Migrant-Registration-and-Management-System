@@ -28,12 +28,6 @@ public:
     string getGender();
     string getID();
     double getPoint();
-    void setName(string name);
-    void setSurname(string surname);
-    void setAge(int age);
-    void setNationallity(string nationallity);
-    void setGender(string gender);
-    void setID(string id);
 };
 
 #endif

@@ -151,25 +151,6 @@ void Array::calculateBudget()
     myFile.close();
 }
 
-void Array::displayEmployees()
-{
-    for (size_t i = 0; i < employeeSize; i++)
-    {
-        cout << employeeArray[i].getID() << " " << employeeArray[i].getName() << " " << employeeArray[i].getSurname() << " " << employeeArray[i].getAge() << " "
-             << employeeArray[i].getNationallity() << " " << employeeArray[i].getGender() << " " << employeeArray[i].getJob() << " " << employeeArray[i].getCity() << " "
-             << employeeArray[i].getSalary() << endl;
-    }
-}
-
-void Array::displayRefugees()
-{
-    for (size_t i = 0; i < refugeeSize; i++)
-    {
-        cout << refugeeArray[i].getID() << " " << refugeeArray[i].getName() << " " << refugeeArray[i].getSurname() << " " << refugeeArray[i].getAge() << " "
-             << refugeeArray[i].getNationallity() << " " << refugeeArray[i].getGender() << " " << refugeeArray[i].getCamp() << endl;
-    }
-}
-
 int Array::getEmployeeSize()
 {
     return employeeSize;

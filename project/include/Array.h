@@ -26,8 +26,6 @@ public:
     void addRefugee(Refugee &newRefugee);
     void addGuilty(Guilty &newGuilty);
     void calculateBudget();
-    void displayEmployees();
-    void displayRefugees();
     int getEmployeeSize();
     int getRefugeeSize();
     void setEmployeeSize(int newSize);
