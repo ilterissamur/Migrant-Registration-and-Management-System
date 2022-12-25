@@ -53,43 +53,54 @@ int main()
             {
                 system("cls");
 
-                cout << "\nPerson point: " << person.getPoint() << ", "
+                cout << "Person point: " << person.getPoint() << ", "
                      << "Person takes A grade from job classification" << endl;
+                cout << "\n";
                 Employee employee(person);
                 employee.findJob("A");         // Listed A class jobs, and cities.
                 myArray.addEmployee(employee); // Migrants got a job, and joined the employee class.
                 employee.addEmployeeFile();    // Adding Employee's file.
                 budget += employee.getTax();   // After the calculate the taxes, their taxes added budget.
+
+                system("cls");
             }
             else if (control == 2) // Migrants has a medium level personal point.
             {
                 system("cls");
 
-                cout << "\nPerson point: " << person.getPoint() << ", "
+                cout << "Person point: " << person.getPoint() << ", "
                      << "Person takes B grade from job classification" << endl;
+                cout << "\n";
                 Employee employee(person);
                 employee.findJob("B");         // Listed B class jobs, and cities.
                 myArray.addEmployee(employee); // Migrants got a job, and joined the employee class.
                 employee.addEmployeeFile();    // Adding Employee's file.
                 budget += employee.getTax();   // After the calculate the taxes, their taxes added budget.
+
+                system("cls");
             }
             else if (control == 1) // Migrants has a below average personal point.
             {
                 system("cls");
 
-                cout << "\nPerson point: " << person.getPoint() << ", "
+                cout << "Person point: " << person.getPoint() << ", "
                      << "Person takes C grade from job classification" << endl;
+                cout << "\n";
                 Employee employee(person);
                 employee.findJob("C");         // Listed C class jobs, and cities.
                 myArray.addEmployee(employee); // Migrants got a job, and joined the employee class.
                 employee.addEmployeeFile();    // Adding Employee's file.
                 budget += employee.getTax();   // After the calculate the taxes, their taxes added budget.
+
+                system("cls");
             }
             // If migrants cannot work for some problems( child or too old or insufficent personal point).
 
             else if (control == -1)
             {
-                cout << "\nPerson's age is too young for working our country" << endl;
+                system("cls");
+
+                cout << "Person's age is too young for working our country" << endl;
                 if ((budget - usingBudget) / 1000 < 1) // There is no budget for the new refugee.
                 {
                     cout << "WARNING: There is no bugdet to add refugee to camp. Add new employee or stop adding refugees" << endl;
@@ -101,24 +112,32 @@ int main()
                 myArray.addRefugee(refugee);                                                            // Migrants got a camp, and joined the refugee class.
                 refugee.addRefugeeFile();                                                               // Adding Refugee's file.
                 usingBudget += 1000;                                                                    // After adding new refugee, using budget increase by 1000.
+
+                system("cls");
             }
             else if (control = -2)
             {
-                cout << "\nPerson's age is too old for working our country" << endl;
+                system("cls");
+
+                cout << "Person's age is too old for working our country" << endl;
                 if ((budget - usingBudget) / 1000 < 1)
                 {
                     cout << "There is no bugdet to add refugee to camp. Add new employee or stop adding refugees" << endl;
                     break;
                 }
                 Refugee refugee(person);
-                cout << "Remaining refugee capacity: " << int((budget - usingBudget) / 1000) << endl; // According to the budget and using budget, calcualte the capacity.
-                refugee.setCamp();                                                                    // Refugees set the camp.
-                myArray.addRefugee(refugee);                                                          // Migrants got a camp, and joined the refugee class.
-                refugee.addRefugeeFile();                                                             // Adding Refugee's file.
-                usingBudget += 1000;                                                                  // After adding new refugee, using budget increase by 1000.
+                cout << "\nRemaining refugee capacity: " << int((budget - usingBudget) / 1000) << endl; // According to the budget and using budget, calcualte the capacity.
+                refugee.setCamp();                                                                      // Refugees set the camp.
+                myArray.addRefugee(refugee);                                                            // Migrants got a camp, and joined the refugee class.
+                refugee.addRefugeeFile();                                                               // Adding Refugee's file.
+                usingBudget += 1000;                                                                    // After adding new refugee, using budget increase by 1000.
+
+                system("cls");
             }
             else if (control == -3)
             {
+                system("cls");
+
                 cout << "Person point: " << person.getPoint() << ", "
                      << "Person's point is too low for working our country" << endl;
                 if ((budget - usingBudget) / 1000 < 1)
@@ -126,15 +145,19 @@ int main()
                     cout << "There is no bugdet to add refugee to camp. Add new employee or stop adding refugees" << endl;
                 }
                 Refugee refugee(person);
-                cout << "Remaining refugee capacity: " << int((budget - usingBudget) / 1000) << endl; // According to the budget and using budget, calcualte the capacity.
-                refugee.setCamp();                                                                    // Refugees set the camp.
-                myArray.addRefugee(refugee);                                                          // Migrants got a camp, and joined the refugee class.
-                refugee.addRefugeeFile();                                                             // Adding Refugee's file.
-                usingBudget += 1000;                                                                  // After adding new refugee, using budget increase by 1000.
+                cout << "\nRemaining refugee capacity: " << int((budget - usingBudget) / 1000) << endl; // According to the budget and using budget, calcualte the capacity.
+                refugee.setCamp();                                                                      // Refugees set the camp.
+                myArray.addRefugee(refugee);                                                            // Migrants got a camp, and joined the refugee class.
+                refugee.addRefugeeFile();                                                               // Adding Refugee's file.
+                usingBudget += 1000;                                                                    // After adding new refugee, using budget increase by 1000.
+
+                system("cls");
             }
         }
         else if (choice == 2) // Guilty Detection Operation.
         {
+            system("cls");
+
             int type, index;
             string tempID;
             int employeeSize = myArray.getEmployeeSize();
@@ -144,7 +167,7 @@ int main()
             cout << "2- Refugee" << endl;
             cout << "Choose migrant type: ";
             cin >> type;
-
+            system("cls");
             cout << "Enter the ID of the guilty: ";
             cin >> tempID;
 
@@ -158,6 +181,8 @@ int main()
                 g2.applyPunsihment(type, budget, usingBudget, myArray.employeeArray, myArray.refugeeArray, employeeSize, refugeeSize, index);
                 myArray.addGuilty(g2); // Add employee's information to the guilty array.
                 g2.addGuiltyFile();    // Add employee's information to the guilty's file .
+
+                system("cls");
             }
             else if (type == 2) // Guilty from Refugee.
             {
@@ -169,6 +194,8 @@ int main()
                 g2.applyPunsihment(type, budget, usingBudget, myArray.employeeArray, myArray.refugeeArray, employeeSize, refugeeSize, index);
                 myArray.addGuilty(g2); // Add refugee's information to the guilty array.
                 g2.addGuiltyFile();    // Add refugee's information to the guilty's file.
+
+                system("cls");
             }
             // Setter methods for sizes.
             myArray.setEmployeeSize(employeeSize);
@@ -177,6 +204,8 @@ int main()
         else if (choice == 3) // Display Operation.
         {
             int selection;
+
+            system("cls");
 
             cout << "1- Display Employees" << endl;
             cout << "2- Display Refugees" << endl;
@@ -191,20 +220,24 @@ int main()
 
             if (selection == 1) // Print All Employees' information.
             {
+                system("cls");
                 myArray.print("Employee");
             }
             else if (selection == 2) // Print All Refugees' information.
             {
+                system("cls");
                 myArray.print("Refugee");
             }
             else // Print All Guilties' information.
             {
+                system("cls");
                 myArray.print("Guilty");
             }
         }
 
         choice = displayMenu(); // Again showing the operation menu.
     }
+
     // Writing the budget's informations to the file.
     ofstream myFile4;
     myFile4.open("budget.txt", ios::out);

@@ -26,82 +26,8 @@ Guilty::Guilty(Refugee &source) // Copy constructor from Refugee class. (There i
 
 void Guilty::setCrime(int migrantType) // According to the migrant type (refugee or employee) set the crimes. (Refugees dont have these crime types:  Money Laundering and Tax Evuation).
 {
-    /*
-    ifstream myFile1;
-    ifstream myFile2;
-
-    myFile1.open("crime.txt", ios::in);
-    myFile2.open("crime.txt", ios::in);
-
-    string tempString1, tempString2;
-    int j = 0, option;
-
-    if (migrantType == 1)
-    {
-
-        for (size_t i = 0; i < 9; i++)
-        {
-            getline(myFile1, tempString1);
-            cout << ++j << "- " << tempString1 << endl;
-            myFile1.ignore();
-            tempString1.clear();
-        }
-
-        myFile1.close();
-
-        cout << "Choose crime: ";
-        cin >> option;
-
-        while (option < 1 || option > 9)
-        {
-            cout << "You entered invalid choice!! Please again enter your choose: ";
-            cin >> option;
-        }
-
-        for (size_t i = 0; i < option; i++)
-        {
-            getline(myFile2, tempString2);
-            tempString2.clear();
-            myFile2.ignore();
-        }
-
-        myFile2.close();
-
-        cout << crime;
-        crime = tempString2;
-    }
-    else
-    {
-        for (size_t i = 0; i < 7; i++)
-        {
-            getline(myFile1, tempString1);
-            cout << ++j << "- " << tempString1 << endl;
-            myFile1.ignore();
-            tempString1.clear();
-        }
-
-        cout << "Choose crime: ";
-        cin >> option;
-
-        while (option < 1 || option > 7)
-        {
-            cout << "You entered invalid choice!! Please again enter your choose: ";
-            cin >> option;
-        }
-    }
-
-    for (size_t i = 0; i < option; i++)
-    {
-        getline(myFile2, tempString2);
-        myFile2.ignore();
-    }
-
-    crime = tempString2;
-    cout << crime;
-    */
-
     int option, j = 0;
-
+    cout << "\n";
     cout << ++j << "- Making Robbery" << endl;
     cout << ++j << "- Commit Murder" << endl;
     cout << ++j << "- Terror Activity" << endl;

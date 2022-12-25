@@ -1,6 +1,6 @@
 #include "Admin.h"
 
-Admin::Admin() // Default constructor of admin class
+Admin::Admin() // Default constructor of admin class.
 {
     username = "admin";
     password = "admin123";

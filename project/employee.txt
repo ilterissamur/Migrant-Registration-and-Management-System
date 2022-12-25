@@ -4,11 +4,11 @@
 75135486 Assim Omer 26 Syria Male Carpenter School Trabzon 15000 2250
 86789264 Harib Suhail 20 Iraq Male Economy School Bursa 20000 4000
 27941389 Mohammed Al-Malki 35 Syria Male Garson School Mersin 7500 750
+54157163 Aisha Asad 49 Morocco Female Engineering School Izmir 20000 4000
 38469214 Ali Dawsari 45 Iraq Male Cooker School Konya 15000 2250
 17765928 Farah Laith 51 Afghanistan Male Driver Edirne School 15000 2250
 54131652 Samir Jenyat 21 Arabia Male Farmer School Sivas 7500 750
 41983247 Latifa Muntari 42 Iran Female Cooker School Edirne 15000 2250
-54157163 Aisha Asad 49 Morocco Female Dustman School Artvin 7500 750
 35642464 Omar Alaaeldin 36 Afghanistan Male Hairstylist School Adana 15000 2250
 31582485 Qadir Waad 23 Morocco Male Engineering School Antalya 20000 4000
 16493278 Malik Nassan 55 Arabia Male Garson School Yozgat 7500 750
@@ -19,3 +19,5 @@
 63542584 Daoud Zazai 31 Iraq Male Mechanic School Adana 15000 2250
 69936212 Mohamed Salah 30 Eqypt Male Carpenter School Afyonkarahisar 15000 2250
 92686371 Ali Akbar 35 Arabia Male Teacher School Antalya 20000 4000
+65242998 Abu Nasir 27 Syria Male Carpenter School Trabzon 15000 2250
+87174872 Rabia Samir 47 Iraq Female Garson School Sivas 7500 750

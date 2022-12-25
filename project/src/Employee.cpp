@@ -70,7 +70,7 @@ void Employee::findJob(string grade) // Thanks to the this function, find a job 
         myFile2.open("city.txt", ios::in);
 
         j = 0;
-
+        cout << "\n";
         for (size_t i = 0; i < 5; i++) // Read school information from city.txt and printing.
         {
             myFile1 >> tempString1;
@@ -139,6 +139,7 @@ void Employee::findJob(string grade) // Thanks to the this function, find a job 
             myFile1 >> tempString1;
             myFile2 >> tempString2;
         }
+        cout << "\n";
         for (size_t i = 0; i < 5; i++) // Read school information from city.txt and printing.
         {
             myFile1 >> tempString1;
@@ -204,6 +205,7 @@ void Employee::findJob(string grade) // Thanks to the this function, find a job 
             myFile1 >> tempString1;
             myFile2 >> tempString2;
         }
+        cout << "\n";
         for (size_t i = 0; i < 5; i++) // Read school information from city.txt and printing.
         {
             myFile1 >> tempString1;
