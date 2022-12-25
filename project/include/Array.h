@@ -32,6 +32,8 @@ public:
     void setRefugeeSize(int newSize);
     void print(string mode);
     friend ostream &operator<<(ostream &printEmployee, Employee &e);
+    friend ostream &operator<<(ostream &printRefugee, Refugee &r);
+    friend ostream &operator<<(ostream &printGuilty, Guilty &g);
 };
 
 #endif
