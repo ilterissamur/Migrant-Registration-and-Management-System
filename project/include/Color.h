@@ -5,6 +5,7 @@
 
 using namespace std;
 
+// Start Color Class' Definition.
 class Color
 {
 public:
@@ -15,5 +16,5 @@ public:
     void printBlue(string sentence);
     void printMagenta(string sentence);
 };
-
+// End of the Color Class' Definition.
 #endif

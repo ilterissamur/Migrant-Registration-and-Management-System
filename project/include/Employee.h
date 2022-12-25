@@ -3,19 +3,20 @@
 
 #include <iostream>
 #include <string>
-#include "Person.h"
+#include "Person.h" // Declare Person.h to copy constructor
 
 using namespace std;
 
-class Employee : public Person
+// Start Employee Class' Definition.
+class Employee : public Person // Employee Class inherited from Person Class.
 {
 private:
-  string job, city;
-  int salary, tax;
+  string job, city; // These private variables using to determine the employee migrants' job and city that work in.
+  int salary, tax;  // These private variables using to determine employees' salary and their taxes according to the their salary.
 
 public:
-  Employee();
-  Employee(Person &source);
+  Employee();               // Default Constructor
+  Employee(Person &source); // Copy Constructor.
   void setEmployeeData(const string &id, const string &name, const string &surname, const int &age, const string &nationallity, const string &gender, const string &job, const string &city, const int &salary, const int &tax);
   void findJob(string grade);
   void addEmployeeFile();
@@ -24,5 +25,5 @@ public:
   string getCity();
   int getSalary();
 };
-
+// End of the Employee Class' Definition.
 #endif

@@ -1,12 +1,12 @@
 #include "Admin.h"
 
-Admin::Admin() // default constructor of admin class
+Admin::Admin() // Default constructor of admin class
 {
     username = "admin";
     password = "admin123";
 }
 
-bool Admin::login() // function that provides the user login
+bool Admin::login() // Function that provides the user login.
 {
     string tempUserName, tempPassword;
 
@@ -14,7 +14,7 @@ bool Admin::login() // function that provides the user login
     cin >> tempUserName;
     cout << "Password: ";
     cin >> tempPassword;
-
+    // Check user login's information. If it is true return boolean true, return false otherwise.
     if (tempPassword == password && tempUserName == username)
     {
         return true;

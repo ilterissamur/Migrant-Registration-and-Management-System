@@ -2,25 +2,26 @@
 #define ARRAY_H
 
 #include <iostream>
-#include <iomanip>
-#include <fstream>
+#include <iomanip> // Declare of <iomanip> to use setw() function when we print data.
+#include <fstream> // Declare of <fstream> to read and write process from the txt file.
 #include "Person.h"
-#include "Employee.h"
-#include "Refugee.h"
-#include "Guilty.h"
+#include "Employee.h" // Declare of Employee.h to Composition.
+#include "Refugee.h"  // Declare of Refugee.h to Composition.
+#include "Guilty.h"   // Declare of Guilty.h to Composition.
 
+// Start Array Class' Definition.
 class Array
 {
 private:
-    int refugeeArraySize, employeeArraySize, guiltyArraySize, refugeeSize, employeeSize, guiltySize;
+    int refugeeArraySize, employeeArraySize, guiltyArraySize, refugeeSize, employeeSize, guiltySize; // Arrays's size and declare migrants size.
 
 public:
-    Refugee *refugeeArray{nullptr};
-    Employee *employeeArray{nullptr};
-    Guilty *guiltyArray{nullptr};
+    Refugee *refugeeArray{nullptr};   // Refugee's Array
+    Employee *employeeArray{nullptr}; // Employee's Array
+    Guilty *guiltyArray{nullptr};     // Guilty's Array
 
-    Array(int numberOfRefugee, int numberOfEmployee, int numberOfGuilty);
-    ~Array();
+    Array(int numberOfRefugee, int numberOfEmployee, int numberOfGuilty); // Three Arguments Constructor
+    ~Array();                                                             // Destructor
     void readArrayData();
     void addEmployee(Employee &newEmployee);
     void addRefugee(Refugee &newRefugee);
@@ -35,5 +36,5 @@ public:
     friend ostream &operator<<(ostream &printRefugee, Refugee &r);
     friend ostream &operator<<(ostream &printGuilty, Guilty &g);
 };
-
+// End of the Array Class' Definiton.
 #endif

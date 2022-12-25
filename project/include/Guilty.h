@@ -2,16 +2,16 @@
 #define GUILTY_H
 
 #include <iostream>
-#include <fstream>
-#include "Employee.h"
-#include "Refugee.h"
+#include <fstream>    // Declare of <fstream> to read and write process from the txt file.
+#include "Employee.h" // Declare Employee.h to copy constructor and search functions' array.
+#include "Refugee.h"  // Declare Refugee.h to copy constructor and search functions' array.
 
 using namespace std;
-
-class Guilty : public Person
+// Start Guilty Class' Definition
+class Guilty : public Person // Guilty Class inherited from Person Class.
 {
 private:
-    string crime, punishment, arrestTime;
+    string crime, punishment; // These private variables using for type of crime and punishment of the migrants.
 
 public:
     Guilty();
@@ -27,5 +27,5 @@ public:
     string getCrime();
     string getPunishment();
 };
-
+// End of the Guilty Class' Definition.
 #endif

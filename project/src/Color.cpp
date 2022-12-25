@@ -1,5 +1,6 @@
 #include "Color.h"
 
+// Write in colorly int terminal whenever the called functions according to the their color.
 void Color::printBlack(string sentence)
 {
     cout << "\033[30m" << sentence << endl;

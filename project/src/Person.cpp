@@ -4,7 +4,7 @@ Person::Person()
 {
 }
 
-void Person::createPerson() // takes new person from user
+void Person::createPerson() // Takes new person from user.
 {
     cout << "Enter name: ";
     cin >> name;
@@ -20,7 +20,7 @@ void Person::createPerson() // takes new person from user
     createID();
 }
 
-void Person::createID() // create person id randomly
+void Person::createID() // Create person id randomly.
 {
     int tempNum;
     string tempID;
@@ -34,17 +34,17 @@ void Person::createID() // create person id randomly
     id = tempID;
 }
 
-int Person::filter(Person p) // filters person is refugee or employee (BAKILACAK)
+int Person::filter(Person p) // Filter the Migrants according to the their personal points. After that return their values to use in main.
 {
-    if (p.getAge() < 18)
+    if (p.getAge() < 18) // Too young to work our country.
     {
         return -1;
     }
-    else if (p.getAge() > 59)
+    else if (p.getAge() > 59) // Too old to work our country.
     {
         return -2;
     }
-    else if (17 < p.getAge() && p.getAge() < 60)
+    else if (17 < p.getAge() && p.getAge() < 60) // Ask the personal points.
     {
         cout << "\nPlease input person's iq test point:";
         cin >> iqPoint;
@@ -82,25 +82,25 @@ int Person::filter(Person p) // filters person is refugee or employee (BAKILACAK
         }
     }
 
-    personPoint = float(mentalPoint + acculturationPoint + healthPoint + iqPoint) / 4;
+    personPoint = float(mentalPoint + acculturationPoint + healthPoint + iqPoint) / 4; // Calculate the average of personal points.
 
-    if (personPoint >= 85)
+    if (personPoint >= 85) // Classify the person point to worker class A.
     {
         return 3;
     }
-    else if (personPoint >= 70)
+    else if (personPoint >= 70) // Classify the person point to worker class B.
     {
         return 2;
     }
-    else if (personPoint >= 55)
+    else if (personPoint >= 55) // Classify the person point to worker class C.
     {
         return 1;
     }
-    else
-    {
+    else // Insufficent Person point.
         return -3;
-    }
 }
+
+// Person's Getter Maethods
 
 string Person::getName()
 {

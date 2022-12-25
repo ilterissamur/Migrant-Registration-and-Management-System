@@ -1,10 +1,10 @@
 #include "Refugee.h"
 
-Refugee::Refugee()
+Refugee::Refugee() // Default Constructor
 {
 }
 
-Refugee::Refugee(Person &source)
+Refugee::Refugee(Person &source) // Copy constructor from Person class.
 {
     name = source.getName();
     surname = source.getSurname();
@@ -14,6 +14,7 @@ Refugee::Refugee(Person &source)
     id = source.getID();
 }
 
+// Set refugee data to our persons' informations.
 void Refugee::setRefugeeData(const string &id, const string &name, const string &surname, const int &age, const string &nationallity, const string &gender, const string &camp)
 {
     this->id = id;
@@ -25,10 +26,11 @@ void Refugee::setRefugeeData(const string &id, const string &name, const string 
     this->camp = camp;
 }
 
+// Set camp according to the user's preferences.
 void Refugee::setCamp()
 {
     ifstream myFile1, myFile2;
-    myFile1.open("camp.txt", ios::in);
+    myFile1.open("camp.txt", ios::in); // We open two times file. One file is showing the camps' options, the another is assigned for camp according to the option.
     myFile2.open("camp.txt", ios::in);
 
     int option, j = 0;
@@ -41,21 +43,21 @@ void Refugee::setCamp()
     }
     cout << "Choose camp: ";
     cin >> option;
-    while (option < 1 || option > 3)
+    while (option < 1 || option > 3) // Checking invalid value.
     {
         cout << "You entered invalid choice!! Please again enter your choose: ";
         cin >> option;
     }
-    for (size_t i = 0; i < option; i++)
+    for (size_t i = 0; i < option; i++) // Assing the camp according to the option.
     {
         myFile2 >> camp;
     }
 
-    myFile1.close();
+    myFile1.close(); // Close the files.
     myFile2.close();
 }
 
-void Refugee::addRefugeeFile()
+void Refugee::addRefugeeFile() // Add refugees' information to the end of the file (app mode).
 {
     ofstream myFile;
     myFile.open("refugee.txt", ios::app);
@@ -65,6 +67,7 @@ void Refugee::addRefugeeFile()
     myFile.close();
 }
 
+// Getter method for camp imformation.
 string Refugee::getCamp()
 {
     return camp;
