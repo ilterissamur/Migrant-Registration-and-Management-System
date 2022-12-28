@@ -222,7 +222,7 @@ void Array::print(string mode) // According to  the string mode, thanks to the t
 
         for (size_t i = 0; i < refugeeSize; i++)
         {
-            cout << refugeeArray[i];
+            cout << refugeeArray[i] << endl;
         }
     }
     else
@@ -233,7 +233,7 @@ void Array::print(string mode) // According to  the string mode, thanks to the t
 
         for (size_t i = 0; i < guiltySize; i++)
         {
-            cout << guiltyArray[i];
+            cout << guiltyArray[i] << endl;
         }
     }
 }
