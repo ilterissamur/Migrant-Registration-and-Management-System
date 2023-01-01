@@ -2,7 +2,6 @@
 #include "Array.h"
 #include "Functions.h"
 #include "Admin.h"
-#include "Color.h"
 
 using namespace std;
 
