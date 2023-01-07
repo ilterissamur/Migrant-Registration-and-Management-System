@@ -4,7 +4,7 @@ Employee::Employee() // Default Constructor
 {
 }
 
-Employee::Employee(Person &source) // Copy constructor from Person class.
+Employee::Employee(Person &source) // Conversion constructor from Person class.
 {
     name = source.getName();
     surname = source.getSurname();
@@ -14,7 +14,7 @@ Employee::Employee(Person &source) // Copy constructor from Person class.
     id = source.getID();
 }
 
-// Set employee data to our persons' informations.
+// Set employee data to our person informations.
 void Employee::setEmployeeData(const string &id, const string &name, const string &surname, const int &age, const string &nationallity, const string &gender, const string &job, const string &city, const int &salary, const int &tax)
 {
     this->id = id;
@@ -40,7 +40,7 @@ void Employee::findJob(string grade) // Thanks to the this function, find a job 
         salary = 20000;
         tax = salary * 0.2;
 
-        myFile1.open("job.txt", ios::in); // We open two times file. One file is showing the school's options, the another is assigned for job according to the option.
+        myFile1.open("job.txt", ios::in);
         myFile2.open("job.txt", ios::in);
 
         for (size_t i = 0; i < 5; i++) // Read school information from job.txt and printing.
@@ -66,12 +66,12 @@ void Employee::findJob(string grade) // Thanks to the this function, find a job 
         myFile1.close(); // Close files.
         myFile2.close();
 
-        myFile1.open("city.txt", ios::in); // We open two times file. One file is showing the city's options, the another is assigned for city according to the option.
+        myFile1.open("city.txt", ios::in);
         myFile2.open("city.txt", ios::in);
 
         j = 0;
         cout << "\n";
-        for (size_t i = 0; i < 5; i++) // Read school information from city.txt and printing.
+        for (size_t i = 0; i < 5; i++) // Read city information from city.txt and printing.
         {
             myFile1 >> tempString1;
             cout << ++j << "- " << tempString1 << endl;
@@ -98,7 +98,7 @@ void Employee::findJob(string grade) // Thanks to the this function, find a job 
         tax = salary * 0.15;
 
         j = 0;
-        myFile1.open("job.txt", ios::in); // We open two times file. One file is showing the school's options, the another is assigned for job according to the option.
+        myFile1.open("job.txt", ios::in);
         myFile2.open("job.txt", ios::in);
 
         for (size_t i = 0; i < 5; i++)
@@ -129,7 +129,7 @@ void Employee::findJob(string grade) // Thanks to the this function, find a job 
         myFile1.close(); // Close files.
         myFile2.close();
 
-        myFile1.open("city.txt", ios::in); // We open two times file. One file is showing the city's options, the another is assigned for job according to the option.
+        myFile1.open("city.txt", ios::in);
         myFile2.open("city.txt", ios::in);
 
         j = 0;
@@ -140,7 +140,7 @@ void Employee::findJob(string grade) // Thanks to the this function, find a job 
             myFile2 >> tempString2;
         }
         cout << "\n";
-        for (size_t i = 0; i < 5; i++) // Read school information from city.txt and printing.
+        for (size_t i = 0; i < 5; i++) // Read city information from city.txt and printing.
         {
             myFile1 >> tempString1;
             cout << ++j << "- " << tempString1 << endl;
@@ -164,7 +164,7 @@ void Employee::findJob(string grade) // Thanks to the this function, find a job 
         tax = salary * 0.1;
 
         j = 0;
-        myFile1.open("job.txt", ios::in); // We open two times file. One file is showing the school's options, the another is assigned for job according to the option.
+        myFile1.open("job.txt", ios::in);
         myFile2.open("job.txt", ios::in);
 
         for (size_t i = 0; i < 10; i++)
@@ -195,7 +195,7 @@ void Employee::findJob(string grade) // Thanks to the this function, find a job 
         myFile1.close(); // Close files.
         myFile2.close();
 
-        myFile1.open("city.txt", ios::in); // We open two times file. One file is showing the city's options, the another is assigned for job according to the option.
+        myFile1.open("city.txt", ios::in);
         myFile2.open("city.txt", ios::in);
 
         j = 0;
@@ -206,7 +206,7 @@ void Employee::findJob(string grade) // Thanks to the this function, find a job 
             myFile2 >> tempString2;
         }
         cout << "\n";
-        for (size_t i = 0; i < 5; i++) // Read school information from city.txt and printing.
+        for (size_t i = 0; i < 5; i++) // Read city information from city.txt and printing.
         {
             myFile1 >> tempString1;
             cout << ++j << "- " << tempString1 << endl;

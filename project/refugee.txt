@@ -15,7 +15,6 @@
 58769631 Aliya Madani 7 Arabia Female Gaziantep
 31759284 Joodi Sulaiman 2 Afghanistan Male Kilis
 37347348 Ghashia Pashia 75 Iran Female Gaziantep
-32662748 Bahir Jamil 12 Arabia Male Kilis
 34855367 Abdul Sayed 62 Arabia Male Bitlis
 12565561 Maisoora Farman 16 Iraq Female Kilis
 67864743 Butrus Nazir 85 Syria Male Bitlis

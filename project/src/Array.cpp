@@ -1,28 +1,28 @@
 #include "Array.h"
-// Three argument Constructor.
-Array::Array(int numberOfEmployee, int numberOfRefugee, int numberOfGuilty)
+
+Array::Array(int numberOfEmployee, int numberOfRefugee, int numberOfGuilty) // Three argument Constructor.
 {
     employeeSize = numberOfEmployee; // Assigning migrants' size.
     refugeeSize = numberOfRefugee;
     guiltySize = numberOfGuilty;
-    employeeArraySize = numberOfEmployee + 10; // The size of the migrants' array change according to the number of migrants in every 10 (We use this method to use memory efficemtly).
+    employeeArraySize = numberOfEmployee + 10; // The size of the migrants' array change according to the number of migrants in every 10 (We use this method to use memory efficently).
     refugeeArraySize = numberOfRefugee + 10;
     guiltyArraySize = numberOfGuilty + 10;
-    employeeArray = new Employee[employeeArraySize]; // We create new employee array form heap according to the migrants' arrays size.
+    employeeArray = new Employee[employeeArraySize]; // We create new employee array form heap according to the migrant's arrays size.
     refugeeArray = new Refugee[refugeeArraySize];
     guiltyArray = new Guilty[guiltyArraySize];
 }
 
-Array::~Array() // Destructor for all migrants' arrays.
+Array::~Array() // Destructor for all migrant's arrays.
 {
-    delete[] employeeArray; // After the numbers of operations, should delete the arrays to avoid memory leak.
+    delete[] employeeArray;
     delete[] refugeeArray;
     delete[] guiltyArray;
 }
 
 void Array::readArrayData()
 {
-    ifstream myFile1; // Create three differemt file for each migrants' types.
+    ifstream myFile1; // Create three differemt file for each migrant's types.
     ifstream myFile2;
     ifstream myFile3;
     myFile1.open("employee.txt", ios::in); // Open the text file to read.
@@ -32,20 +32,20 @@ void Array::readArrayData()
     string tempID, tempName, tempSurname, tempNationallity, tempGender, tempString1, tempString2, tempJob, tempCity, tempCamp, tempCrime, tempPunishment;
     int tempAge, tempSalary, tempTax; // Create temp variables to read from text file.
 
-    for (size_t i = 0; i < employeeSize; i++) // Read the Employees' information from text file line by line.
+    for (size_t i = 0; i < employeeSize; i++) // Read the Employee's information from text file line by line.
     {
         myFile1 >> tempID >> tempName >> tempSurname >> tempAge >> tempNationallity >> tempGender >> tempString1 >> tempString2 >> tempCity >> tempSalary >> tempTax;
         tempJob = tempString1 + " " + tempString2;
         employeeArray[i].setEmployeeData(tempID, tempName, tempSurname, tempAge, tempNationallity, tempGender, tempJob, tempCity, tempSalary, tempTax); // Using the employee's setter.
     }
 
-    for (size_t i = 0; i < refugeeSize; i++) // Read the Refugees' information from text file line by line.
+    for (size_t i = 0; i < refugeeSize; i++) // Read the Refugee's information from text file line by line.
     {
         myFile2 >> tempID >> tempName >> tempSurname >> tempAge >> tempNationallity >> tempGender >> tempCamp;
         refugeeArray[i].setRefugeeData(tempID, tempName, tempSurname, tempAge, tempNationallity, tempGender, tempCamp);
     }
 
-    for (size_t i = 0; i < guiltySize; i++) // Read the Guilties' information from text file line by line.
+    for (size_t i = 0; i < guiltySize; i++) // Read the Guiltie's information from text file line by line.
     {
         myFile3 >> tempID >> tempName >> tempSurname >> tempAge >> tempNationallity >> tempGender >> tempString1 >> tempString2 >> tempPunishment;
         tempCrime = tempString1 + " " + tempString2;
@@ -132,10 +132,10 @@ void Array::addGuilty(Guilty &newGuilty) // Function add new guilty to array.
     }
 }
 
-void Array::calculateBudget() // Function calculate camp budget according to the employee's salaries' taxes.
+void Array::calculateBudget() // Function calculate camp budget according to the employee's taxes.
 {
     ofstream myFile;
-    myFile.open("budget.txt", ios::out); // Write to budget txt file.
+    myFile.open("budget.txt", ios::out);
 
     int sum = 0;
 
@@ -204,36 +204,36 @@ void Array::print(string mode) // According to  the string mode, thanks to the t
 {
     if (mode == "Employee")
     {
-        cout << setw(20) << left << "ID" << setw(20) << left << "Name" << setw(20) << left << "Surname" << setw(20) << left << "Age"
+        cout << "   " << setw(20) << left << "ID" << setw(20) << left << "Name" << setw(20) << left << "Surname" << setw(20) << left << "Age"
              << setw(20) << left << "Nationallity" << setw(20) << left << "Gender" << setw(20) << left << "Job" << setw(20) << left << "City"
              << setw(20) << left << "Salary" << setw(20) << left << "Tax" << endl;
         cout << "\n";
 
         for (size_t i = 0; i < employeeSize; i++)
         {
-            cout << employeeArray[i] << endl;
+            cout << i + 1 << "- " << employeeArray[i] << endl;
         }
     }
     else if (mode == "Refugee")
     {
-        cout << setw(20) << left << "ID" << setw(20) << left << "Name" << setw(20) << left << "Surname" << setw(20) << left << "Age"
+        cout << "   " << setw(20) << left << "ID" << setw(20) << left << "Name" << setw(20) << left << "Surname" << setw(20) << left << "Age"
              << setw(20) << left << "Nationallity" << setw(20) << left << "Gender" << setw(20) << left << "Camp" << endl;
         cout << "\n";
 
         for (size_t i = 0; i < refugeeSize; i++)
         {
-            cout << refugeeArray[i] << endl;
+            cout << i + 1 << "- " << refugeeArray[i] << endl;
         }
     }
     else
     {
-        cout << setw(20) << left << "ID" << setw(20) << left << "Name" << setw(20) << left << "Surname" << setw(20) << left << "Age"
+        cout << "   " << setw(20) << left << "ID" << setw(20) << left << "Name" << setw(20) << left << "Surname" << setw(20) << left << "Age"
              << setw(20) << left << "Nationallity" << setw(20) << left << "Gender" << setw(20) << left << "Crime" << setw(20) << left << "Punishment" << endl;
         cout << "\n";
 
         for (size_t i = 0; i < guiltySize; i++)
         {
-            cout << guiltyArray[i] << endl;
+            cout << i + 1 << "- " << guiltyArray[i] << endl;
         }
     }
 }

@@ -5,7 +5,7 @@
 
 #include <iostream>
 #include <string>
-#include <fstream> // Declare of <fstream> to read and write process from the txt file.
+#include <fstream>
 
 using namespace std;
 

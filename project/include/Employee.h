@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "Person.h" // Declare Person.h to copy constructor
+#include "Person.h"
 
 using namespace std;
 
@@ -16,7 +16,7 @@ private:
 
 public:
   Employee();               // Default Constructor
-  Employee(Person &source); // Copy Constructor.
+  Employee(Person &source); // Conversion Constructor.
   void setEmployeeData(const string &id, const string &name, const string &surname, const int &age, const string &nationallity, const string &gender, const string &job, const string &city, const int &salary, const int &tax);
   void findJob(string grade);
   void addEmployeeFile();

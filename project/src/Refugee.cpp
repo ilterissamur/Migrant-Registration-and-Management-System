@@ -4,7 +4,7 @@ Refugee::Refugee() // Default Constructor
 {
 }
 
-Refugee::Refugee(Person &source) // Copy constructor from Person class.
+Refugee::Refugee(Person &source) // Conversion constructor from Person class.
 {
     name = source.getName();
     surname = source.getSurname();

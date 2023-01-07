@@ -20,8 +20,8 @@ public:
     Employee *employeeArray{nullptr}; // Employee's Array
     Guilty *guiltyArray{nullptr};     // Guilty's Array
 
-    Array(int numberOfRefugee, int numberOfEmployee, int numberOfGuilty); // Three Arguments Constructor
-    ~Array();                                                             // Destructor
+    Array(int numberOfRefugee, int numberOfEmployee, int numberOfGuilty);
+    ~Array();
     void readArrayData();
     void addEmployee(Employee &newEmployee);
     void addRefugee(Refugee &newRefugee);

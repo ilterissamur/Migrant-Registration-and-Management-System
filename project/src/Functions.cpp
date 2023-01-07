@@ -25,7 +25,7 @@ int displayMenu() // Displays menu in main
     return selection;
 }
 
-int calculateDataSize(string fileName, ifstream &myFile) // Returns migrants number (line number).
+int calculateDataSize(string fileName, ifstream &myFile) // Returns file's number (line number).
 {
     string tempLine;
     int n{0};

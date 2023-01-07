@@ -5,7 +5,7 @@
 #include <string>
 
 using namespace std;
-// Admin Class' Definition.
+// Admin Class's Definition.
 class Admin
 {
 private:
@@ -15,5 +15,5 @@ public:
     Admin();
     bool login();
 };
-// End of the Admin Class' Definition.
+// End of the Admin Class's Definition.
 #endif

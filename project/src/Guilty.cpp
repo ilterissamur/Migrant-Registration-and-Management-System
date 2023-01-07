@@ -4,7 +4,7 @@ Guilty::Guilty() // Default Constructor
 {
 }
 
-Guilty::Guilty(Employee &source) // Copy constructor from Employee class. (There is a composition between them)
+Guilty::Guilty(Employee &source) // Conversion constructor from Employee class. (There is a composition between them)
 {
     name = source.getName();
     surname = source.getSurname();
@@ -14,7 +14,7 @@ Guilty::Guilty(Employee &source) // Copy constructor from Employee class. (There
     id = source.getID();
 }
 
-Guilty::Guilty(Refugee &source) // Copy constructor from Refugee class. (There is a composition between them)
+Guilty::Guilty(Refugee &source) // Conversion constructor from Refugee class. (There is a composition between them)
 {
     name = source.getName();
     surname = source.getSurname();

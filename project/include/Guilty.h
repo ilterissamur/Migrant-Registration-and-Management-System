@@ -2,9 +2,9 @@
 #define GUILTY_H
 
 #include <iostream>
-#include <fstream>    // Declare of <fstream> to read and write process from the txt file.
-#include "Employee.h" // Declare Employee.h to copy constructor and search functions' array.
-#include "Refugee.h"  // Declare Refugee.h to copy constructor and search functions' array.
+#include <fstream>
+#include "Employee.h"
+#include "Refugee.h"
 
 using namespace std;
 // Start Guilty Class' Definition

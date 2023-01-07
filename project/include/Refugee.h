@@ -15,7 +15,7 @@ private:
 
 public:
     Refugee();               // Default Constructor
-    Refugee(Person &source); // Copy Constructor.
+    Refugee(Person &source); // Conversion Constructor.
     void setRefugeeData(const string &id, const string &name, const string &surname, const int &age, const string &nationallity, const string &gender, const string &camp);
     void setCamp();
     void addRefugeeFile();
